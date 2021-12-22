@@ -17,11 +17,13 @@
 <meta property="og:site_name" content="Dean Su&#39;s Notes">
 <meta property="og:description" content="一. 原码，反码，补码1. 机器数机器数是二进制的数字，带有sign bit，例如：  -3的机器数为100000113的机器数为00000011  2. 真值首先明确的一个点是什么是形式值。即正常二进制转换十进制所得到的数值，例如：  10000011转换成二进制即为131，所以131就是10000011的形式值  但是真值可以理解为去掉sign bit，将其他位转换为形式值，例如：  1000">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://deansu948.github.io/K-map-risk.png">
 <meta property="article:published_time" content="2021-12-21T05:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-21T21:45:00.246Z">
+<meta property="article:modified_time" content="2021-12-22T06:50:06.976Z">
 <meta property="article:author" content="Dean Su&#39;s Notes">
 <meta property="article:tag" content="数字电路">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://deansu948.github.io/K-map-risk.png">
   
     <link rel="alternative" href="/project/atom.xml" title="Dean Su&#39;s Notes" type="application/atom+xml">
   
@@ -218,7 +220,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">629字</span>
+      <span class="post-count">832字</span>
     </span>
   </span>
 
@@ -266,7 +268,15 @@
 <h4 id="1-1-0型冒险"><a href="#1-1-0型冒险" class="headerlink" title="1.1 0型冒险####"></a>1.1 0型冒险####</h4><p>0型冒险是指输出原本应该一直为0的时候，由于time delay的原因输出产生了短暂的1输出。</p>
 <h4 id="1-2-1型冒险"><a href="#1-2-1型冒险" class="headerlink" title="1.2 1型冒险"></a>1.2 1型冒险</h4><p>1型冒险是指输出原本应该一直为1的时候，由于time delay的原因输出产生了短暂的0输出。</p>
 <h3 id="2-动态冒险"><a href="#2-动态冒险" class="headerlink" title="2. 动态冒险"></a>2. 动态冒险</h3><p>输入变化时，输出也要变化的时候叫做<strong>动态冒险</strong>。<br>（i.e. 也就是一个输入变化一次从而引发输出变化多次的可能性）<br>因为动态冒险是由于静态冒险产生的，所以动态冒险的电路一定存在静态冒险。</p>
-<h3 id="3-如何判断冒险"><a href="#3-如何判断冒险" class="headerlink" title="3. 如何判断冒险"></a>3. 如何判断冒险</h3><p>可以利用卡诺图进行静态冒险的检查。</p>
+<h3 id="3-如何判断冒险"><a href="#3-如何判断冒险" class="headerlink" title="3. 如何判断冒险"></a>3. 如何判断冒险</h3><p>可以利用K-map进行静态冒险的检查。类似下图：<br><img src="/K-map-risk.png" alt="avatar"><br>AC与AB两个圈相切，这种时候可能会产生冒险。B=C=1，当A从1变成0的时候，会产生逻辑冒险。那么如何消除呢，这时候我们需要对原来的SOP后面加上BC即可消除输出的毛刺现象。</p>
+<h3 id="4-如何消除毛刺"><a href="#4-如何消除毛刺" class="headerlink" title="4. 如何消除毛刺"></a>4. 如何消除毛刺</h3><p>首先需要确认一点，毛刺不是对所有的输入都是有害的，例如DFF的输入端，只要毛刺不在time edge并且满足数据建立和保持时间，则对系统无害，但是我们还是需要尽可能地取减少毛刺现象。可以通过以下方法：  </p>
+<blockquote>
+<ol>
+<li>尽量使用synchronous design</li>
+<li>在SOP或者POS中增加K-Map当中相切圆的term</li>
+<li>通过在输出增加并联的电容减少毛刺的影响</li>
+</ol>
+</blockquote>
 
     
 
