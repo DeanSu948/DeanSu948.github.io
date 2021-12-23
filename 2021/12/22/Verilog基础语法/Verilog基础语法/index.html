@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg">
 <meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif">
 <meta property="article:published_time" content="2021-12-22T05:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-22T08:28:32.425Z">
+<meta property="article:modified_time" content="2021-12-23T03:09:17.170Z">
 <meta property="article:author" content="Dean Su&#39;s Notes">
 <meta property="article:tag" content="Verilog">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">83字</span>
+      <span class="post-count">435字</span>
     </span>
   </span>
 
@@ -230,7 +230,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -265,31 +265,82 @@ module arbiter (
     output        gnt_1                 ;  
 </pre>
 
-<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><pre>
-
+<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><p>This statement is used to check the chondition to decide whether or not to excute a portion of code.</p>
+<pre>
+if (enable == 1'b1) begin
+    data = 10; // Decimal assigned
+    address = 16'hDEAD; // Hexadecimal
+    wr_enable = 1'b1; // Binary 
+ 
+end else begin
+    data = 32'b0; n   
+    wr_enable = 1'b0;
+    address = address + 1;  
+end
 </pre>
 
-
-<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><pre>
-
+<p>The difference of if-else in verilog between others is that we need to use <strong>begin</strong> and <strong>and</strong> instead of brackets.  </p>
+<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><p>The case statement is used where we have one variable which needs to be checked for multiple values. The address decoder is an good example.  </p>
+<pre>
+case(address)
+    0 : $display ("...");
+    1 : $display ("...");
+    2 : $display  ("...");
+    default : $display  ("...");
+endcase
 </pre>
 
-<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><pre>
-
+<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><p>While loop is not used normally in the real life, but it is used in the test bench.</p>
+<pre>
+while (free_time) begin
+    $display ("...");
+end
 </pre>
 
 
 <h3 id="3-4-For-Loop"><a href="#3-4-For-Loop" class="headerlink" title="3.4 For Loop"></a>3.4 For Loop</h3><pre>
-
+for (i = 0; i < 16; i = i +1) begin
+    $display ("...", i);
+end
 </pre>
 
 
-<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><pre>
-
+<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><p>Repeat is used to tell us how many times to run throught the code.</p>
+<pre>
+repeat (16) begin
+    $display ("Current value of i is %d", i);
+    i = i + 1;
+end
 </pre>
 
 
-<h3 id="3-6-Summary"><a href="#3-6-Summary" class="headerlink" title="3.6 Summary"></a>3.6 Summary</h3><h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function##"></a>6. Test and Function##</h2>
+<h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><p>Initial Block is used at the beginning of the simulation.  </p>
+<p>The sensitive list is the one which tells the always block when to execute the block of code, as shown in the figure below. The @ symbol indicates the block will be triggered  at the condition in parenthesis.  </p>
+<p>The always block can not drive wire data but can drive reg and int data.</p>
+<pre>
+initial begin
+    clk = 0;
+    reset = 0;
+    req_0 = 0;
+    req_1 = 0;
+end
+</pre>
+<h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><p>Always  block always excutes. additionally, it also can have a sensitive list or a delay associated with it. </p>
+<h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function"></a>6. Test and Function</h2><p>Wehen we nee to repeat the same old things again and agin, we can use the Task and Funtion. It’s similar with other languages to repeat used codes.  </p>
+<p>There is one different between the function and task. Task can have the time delay but function can not. This means that function canbe used ofr modeling combnational logic.</p>
+<p>By the way, function can return a value. whereas task can not.</p>
+<pre>
+function parity;
+input [31:0] data;
+integer i;
+begin
+    parity = 0;
+    for (i= 0; i < 32; i = i + 1) begin
+        parity = parity ^ data[i];
+    end
+end
+endfunction
+</pre>
     
 
     
