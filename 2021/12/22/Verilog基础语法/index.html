@@ -19,21 +19,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="1. OPERATORS 2. Code of Module  编写如图所示的chip，代码为：  1234567891011121314151617181920module arbiter (        clock      , &#x2F;&#x2F; clock      reset      , &#x2F;&#x2F; Active high, syn reset      req\_0      , &#x2F;&#x2F; Request">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/07/25/hello-world/index.html">
+<meta property="og:title" content="Verilog基础语法">
+<meta property="og:url" content="http://example.com/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1. OPERATORS 2. Code of Module  编写如图所示的chip，代码为：  1234567891011121314151617181920module arbiter (        clock      , &#x2F;&#x2F; clock      reset      , &#x2F;&#x2F; Active high, syn reset      req\_0      , &#x2F;&#x2F; Request">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-25T07:01:48.846Z">
-<meta property="article:modified_time" content="2025-07-25T07:01:48.846Z">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif">
+<meta property="article:published_time" content="2021-12-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-30T02:08:21.767Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>Verilog基础语法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="Verilog基础语法"></span>
           
         </div>
 
@@ -210,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-25 07:01" pubdate>
-          July 25, 2025 am
+        <time datetime="2021-12-22 00:00" pubdate>
+          December 22, 2021 am
         </time>
       </span>
     
@@ -222,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 words
+          186 words
         
       </span>
     
@@ -233,7 +237,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -270,24 +274,44 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">Verilog基础语法</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="1-OPERATORS"><a href="#1-OPERATORS" class="headerlink" title="1. OPERATORS"></a>1. OPERATORS</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-Code-of-Module"><a href="#2-Code-of-Module" class="headerlink" title="2. Code of Module"></a>2. Code of Module</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif" srcset="/img/loading.gif" lazyload> </p>
+<p>编写如图所示的chip，代码为： </p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><br><span class="hljs-keyword">module</span> arbiter (    <br>    clock      , <span class="hljs-comment">// clock  </span><br>    reset      , <span class="hljs-comment">// Active high, syn reset  </span><br>    req\_0      , <span class="hljs-comment">// Request 0  </span><br>    req\_1      , <span class="hljs-comment">// Request 1  </span><br>    gnt\_0      , <span class="hljs-comment">// Grant 0  </span><br>    gnt\_1        <span class="hljs-comment">// Grant 1  </span><br>    );  <br><br><span class="hljs-comment">//-------------Input Ports-----------------------------  </span><br>    <span class="hljs-keyword">input</span>           clock               ;  <br>    <span class="hljs-keyword">input</span>           reset               ;  <br>    <span class="hljs-keyword">input</span>           req\_0               ;  <br>    <span class="hljs-keyword">input</span>           req\_1               ;  <br>     <br><span class="hljs-comment">//-------------Output Ports----------------------------  </span><br>    <span class="hljs-keyword">output</span>        gnt\_0                 ;  <br>    <span class="hljs-keyword">output</span>        gnt\_1                 ;  <br><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><p>This statement is used to check the chondition to decide whether or not to excute a portion of code.</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><br><span class="hljs-keyword">if</span> (enable<span class="hljs-operator"> == </span><span class="hljs-number">1</span><span class="hljs-symbol">&#x27;b1</span>) <span class="hljs-keyword">begin</span><br>    data = <span class="hljs-number">10</span>; <span class="hljs-comment">// Decimal assigned</span><br>    address = <span class="hljs-number">16</span><span class="hljs-symbol">&#x27;hDEAD</span>; <span class="hljs-comment">// Hexadecimal</span><br>    wr\_enable = <span class="hljs-number">1</span><span class="hljs-symbol">&#x27;b1</span>; <span class="hljs-comment">// Binary </span><br> <br><span class="hljs-keyword">end</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>    data = <span class="hljs-number">32</span><span class="hljs-symbol">&#x27;b0</span>; n   <br>    wr\_enable = <span class="hljs-number">1</span><span class="hljs-symbol">&#x27;b0</span>;<br>    address = address<span class="hljs-operator"> + </span><span class="hljs-number">1</span>;  <br><span class="hljs-keyword">end</span><br><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>The difference of if-else in verilog between others is that we need to use <strong>begin</strong> and <strong>and</strong> instead of brackets. </p>
+<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><p>The case statement is used where we have one variable which needs to be checked for multiple values. The address decoder is an good example. </p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gams"><br>case(address)<br>    <span class="hljs-number">0</span> : <span class="hljs-symbol">$</span><span class="hljs-keyword">display</span> (<span class="hljs-string">&quot;...&quot;</span>);<br>    <span class="hljs-number">1</span> : <span class="hljs-symbol">$</span><span class="hljs-keyword">display</span> (<span class="hljs-string">&quot;...&quot;</span>);<br>    <span class="hljs-number">2</span> : <span class="hljs-symbol">$</span><span class="hljs-keyword">display</span>  (<span class="hljs-string">&quot;...&quot;</span>);<br>    default : <span class="hljs-symbol">$</span><span class="hljs-keyword">display</span>  (<span class="hljs-string">&quot;...&quot;</span>);<br>endcase<br><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><p>While loop is not used normally in the real life, but it is used in the test bench.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><br><span class="hljs-keyword">while</span> (free\_time) <span class="hljs-keyword">begin</span><br>    <span class="hljs-variable">$display</span> (<span class="hljs-string">&quot;...&quot;</span>);<br><span class="hljs-keyword">end</span><br><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="3-4-For-Loop"><a href="#3-4-For-Loop" class="headerlink" title="3.4 For Loop"></a>3.4 For Loop</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><br><span class="hljs-attribute">for</span> (i = <span class="hljs-number">0</span>; <span class="hljs-attribute">i</span> &lt; <span class="hljs-number">16</span>; <span class="hljs-attribute">i</span> = i +<span class="hljs-number">1</span>) begin<br>    <span class="hljs-variable">$display</span> (<span class="hljs-string">&quot;...&quot;</span>, i);<br><span class="hljs-attribute">end</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><p>Repeat is used to tell us how many times to run throught the code.</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><br><span class="hljs-attribute">repeat</span> (<span class="hljs-number">16</span>) begin<br>    <span class="hljs-variable">$display</span> (<span class="hljs-string">&quot;Current value of i is %d&quot;</span>, i);<br>    <span class="hljs-attribute">i</span> = i + <span class="hljs-number">1</span>;<br><span class="hljs-attribute">end</span><br><br></code></pre></td></tr></table></figure>
+
+<h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><p>Initial Block is used at the beginning of the simulation. </p>
+<p>The sensitive list is the one which tells the always block when to execute the block of code, as shown in the figure below. The @ symbol indicates the block will be triggered at the condition in parenthesis. </p>
+<p>The always block can not drive wire data but can drive reg and int data.</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs abnf"><br>initial begin<br>    clk <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span><br>    reset <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span><br>    req\_0 <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span><br>    req\_1 <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">;</span><br>end<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><p>Always block always excutes. additionally, it also can have a sensitive list or a delay associated with it. </p>
+<h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function"></a>6. Test and Function</h2><p>Wehen we nee to repeat the same old things again and agin, we can use the Task and Funtion. It’s similar with other languages to repeat used codes. </p>
+<p>There is one different between the function and task. Task can have the time delay but function can not. This means that function canbe used ofr modeling combnational logic.</p>
+<p>By the way, function can return a value. whereas task can not.</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs fortran"><br><span class="hljs-function"><span class="hljs-keyword">function</span></span> <span class="hljs-built_in">parity</span>;<br>input [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] <span class="hljs-keyword">data</span>;<br><span class="hljs-keyword">integer</span> i;<br>begin<br>    <span class="hljs-built_in">parity</span> = <span class="hljs-number">0</span>;<br>    for (i= <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i = i + <span class="hljs-number">1</span>) begin<br>        <span class="hljs-built_in">parity</span> = <span class="hljs-built_in">parity</span> ^ <span class="hljs-keyword">data</span>[i];<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br>endfunction<br><br></code></pre></td></tr></table></figure>
+
+
+
 
                 
               </div>
@@ -297,6 +321,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/notes/" class="print-no-link">#notes</a>
+      
+    </div>
+  
 </div>
 
 
@@ -305,8 +336,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/07/25/hello-world/</div>
+      <div>Verilog基础语法</div>
+      <div>http://example.com/2021/12/22/Verilog基础语法/</div>
     </div>
     <div class="license-meta">
       
@@ -318,7 +349,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 25, 2025</div>
+          <div>December 22, 2021</div>
         </div>
       
       
@@ -350,12 +381,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" title="Verilog基本知识">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Verilog基本知识</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" title="STA基本方法">
-                        <span class="hidden-mobile">STA基本方法</span>
+                      <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" title="数字电路基础">
+                        <span class="hidden-mobile">数字电路基础</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

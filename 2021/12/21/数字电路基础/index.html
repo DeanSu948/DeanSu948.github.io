@@ -19,21 +19,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="一. 原码，反码，补码1. 机器数机器数是二进制的数字，带有sign bit，例如：  -3的机器数为100000113的机器数为00000011  2. 真值首先明确的一个点是什么是形式值。即正常二进制转换十进制所得到的数值，例如：  10000011转换成二进制即为131，所以131就是10000011的形式值  但是真值可以理解为去掉sign bit，将其他位转换为形式值，例如：  1000">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/07/25/hello-world/index.html">
+<meta property="og:title" content="数字电路基础">
+<meta property="og:url" content="http://example.com/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一. 原码，反码，补码1. 机器数机器数是二进制的数字，带有sign bit，例如：  -3的机器数为100000113的机器数为00000011  2. 真值首先明确的一个点是什么是形式值。即正常二进制转换十进制所得到的数值，例如：  10000011转换成二进制即为131，所以131就是10000011的形式值  但是真值可以理解为去掉sign bit，将其他位转换为形式值，例如：  1000">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-07-25T07:01:48.846Z">
-<meta property="article:modified_time" content="2025-07-25T07:01:48.846Z">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmmmrfchtj30750453yo.jpg">
+<meta property="article:published_time" content="2021-12-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-30T02:07:52.053Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmmmrfchtj30750453yo.jpg">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>数字电路基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="数字电路基础"></span>
           
         </div>
 
@@ -210,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-25 07:01" pubdate>
-          July 25, 2025 am
+        <time datetime="2021-12-21 00:00" pubdate>
+          December 21, 2021 am
         </time>
       </span>
     
@@ -222,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 words
+          812 words
         
       </span>
     
@@ -233,7 +236,7 @@
         
         
         
-          1 mins
+          7 mins
         
       </span>
     
@@ -270,24 +273,48 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">数字电路基础</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="一-原码，反码，补码"><a href="#一-原码，反码，补码" class="headerlink" title="一. 原码，反码，补码"></a>一. 原码，反码，补码</h2><h3 id="1-机器数"><a href="#1-机器数" class="headerlink" title="1. 机器数"></a>1. 机器数</h3><p><strong>机器数</strong>是二进制的数字，带有sign bit，例如：</p>
+<blockquote>
+<p>-3的机器数为10000011<br>3的机器数为00000011</p>
+</blockquote>
+<h3 id="2-真值"><a href="#2-真值" class="headerlink" title="2. 真值"></a>2. 真值</h3><p>首先明确的一个点是什么是<strong>形式值</strong>。即正常二进制转换十进制所得到的数值，例如：</p>
+<blockquote>
+<p>10000011转换成二进制即为131，所以131就是10000011的形式值</p>
+</blockquote>
+<p>但是<strong>真值</strong>可以理解为去掉sign bit，将其他位转换为形式值，例如：</p>
+<blockquote>
+<p>10000011，取MSB为sign bit，1为负数，0000011为3，故10000011的真值为-3</p>
+</blockquote>
+<h3 id="3-原码"><a href="#3-原码" class="headerlink" title="3. 原码"></a>3. 原码</h3><p><strong>原码</strong>为sign bit+真值的绝对值，且MSB为Sign Bit。因此正常二进制32-bit int取值范围为[1111 1111， 0111 111],即为[-127， 127]。</p>
+<h3 id="4-反码"><a href="#4-反码" class="headerlink" title="4. 反码"></a>4. 反码</h3><p>正数<strong>反码</strong>为其本身，负数反码为原码sign bit不变，其余位取反。</p>
+<h3 id="5-补码"><a href="#5-补码" class="headerlink" title="5. 补码"></a>5. 补码</h3><p>正数<strong>补码</strong>为其本身，负数补码为原码基础上，sign bit不变，其余位取反+1。(i.e. 反码+1) </p>
+<hr>
+<h2 id="二-竞争冒险"><a href="#二-竞争冒险" class="headerlink" title="二. 竞争冒险"></a>二. 竞争冒险</h2><p>在实际电路中会存在time dalay，当多个信号发生变化的瞬间，组合的逻辑输出产生先后顺序，这个现象叫做<strong>竞争</strong>。<br>同时time delay会导致实际输出会有毛刺现象，这种情况即为冒险。冒险分两种：</p>
+<blockquote>
+<ol>
+<li>静态冒险</li>
+<li>动态冒险</li>
+</ol>
+</blockquote>
+<p>如果存在两个或者两个以上的输入信号同时产生变化时，输出上产生了毛刺现象，此为<strong>功能冒险</strong>。<br>如果只有一个输入产生变化时才出现冒险，此为<strong>逻辑冒险</strong>。</p>
+<h3 id="1-静态冒险"><a href="#1-静态冒险" class="headerlink" title="1. 静态冒险"></a>1. 静态冒险</h3><p>在一个组合电路输入有变化且输出不应该发生变化的情况下，出现了一次瞬间的错误变化叫做<strong>静态冒险</strong>。</p>
+<h4 id="1-1-0型冒险"><a href="#1-1-0型冒险" class="headerlink" title="1.1 0型冒险####"></a>1.1 0型冒险####</h4><p>0型冒险是指输出原本应该一直为0的时候，由于time delay的原因输出产生了短暂的1输出。</p>
+<h4 id="1-2-1型冒险"><a href="#1-2-1型冒险" class="headerlink" title="1.2 1型冒险"></a>1.2 1型冒险</h4><p>1型冒险是指输出原本应该一直为1的时候，由于time delay的原因输出产生了短暂的0输出。</p>
+<h3 id="2-动态冒险"><a href="#2-动态冒险" class="headerlink" title="2. 动态冒险"></a>2. 动态冒险</h3><p>输入变化时，输出也要变化的时候叫做<strong>动态冒险</strong>。<br>（i.e. 也就是一个输入变化一次从而引发输出变化多次的可能性）<br>因为动态冒险是由于静态冒险产生的，所以动态冒险的电路一定存在静态冒险。</p>
+<h3 id="3-如何判断冒险"><a href="#3-如何判断冒险" class="headerlink" title="3. 如何判断冒险"></a>3. 如何判断冒险</h3><p>可以利用K-map进行静态冒险的检查。类似下图：<br><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmmmrfchtj30750453yo.jpg" srcset="/img/loading.gif" lazyload><br>AC与AB两个圈相切，这种时候可能会产生冒险。B&#x3D;C&#x3D;1，当A从1变成0的时候，会产生逻辑冒险。那么如何消除呢，这时候我们需要对原来的SOP后面加上BC即可消除输出的毛刺现象。</p>
+<h3 id="4-如何消除毛刺"><a href="#4-如何消除毛刺" class="headerlink" title="4. 如何消除毛刺"></a>4. 如何消除毛刺</h3><p>首先需要确认一点，毛刺不是对所有的输入都是有害的，例如DFF的输入端，只要毛刺不在time edge并且满足数据建立和保持时间，则对系统无害，但是我们还是需要尽可能地取减少毛刺现象。可以通过以下方法： </p>
+<blockquote>
+<ol>
+<li>尽量使用synchronous design</li>
+<li>在SOP或者POS中增加K-Map当中相切圆的term</li>
+<li>通过在输出增加并联的电容减少毛刺的影响</li>
+</ol>
+</blockquote>
 
                 
               </div>
@@ -297,6 +324,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/notes/" class="print-no-link">#notes</a>
+      
+    </div>
+  
 </div>
 
 
@@ -305,8 +339,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2025/07/25/hello-world/</div>
+      <div>数字电路基础</div>
+      <div>http://example.com/2021/12/21/数字电路基础/</div>
     </div>
     <div class="license-meta">
       
@@ -318,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 25, 2025</div>
+          <div>December 21, 2021</div>
         </div>
       
       
@@ -350,12 +384,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="Verilog基础语法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Verilog基础语法</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" title="STA基本方法">
-                        <span class="hidden-mobile">STA基本方法</span>
+                      <a href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" title="历程之始">
+                        <span class="hidden-mobile">历程之始</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
