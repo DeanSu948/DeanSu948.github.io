@@ -4,15 +4,67 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Verilog基本知识 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="声明：本文仅为个人学习笔记，原文集合如下：https:&#x2F;&#x2F;blog.csdn.net&#x2F;times\_poem&#x2F;category\_6245867.html 0. define、parameter、localparam三者的区别1、概述define：   作用 -&gt; 常用于定义常量可以跨模块、跨文件;范围 -&gt; 整个工程;   parameter：   作用 -&gt; 常用于模块间参数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verilog基本知识">
+<meta property="og:url" content="http://example.com/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="声明：本文仅为个人学习笔记，原文集合如下：https:&#x2F;&#x2F;blog.csdn.net&#x2F;times\_poem&#x2F;category\_6245867.html 0. define、parameter、localparam三者的区别1、概述define：   作用 -&gt; 常用于定义常量可以跨模块、跨文件;范围 -&gt; 整个工程;   parameter：   作用 -&gt; 常用于模块间参数">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdn.net/20160513212343492">
+<meta property="og:image" content="https://img-blog.csdn.net/20160513212350208">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2011/128091/2011031715015865.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2011/128091/2011031714550535.jpg">
+<meta property="og:image" content="http://www.51hei.com/UpFiles/Pic/chip/2008-01/20080104151156176.jpg">
+<meta property="og:image" content="http://www.51hei.com/UpFiles/Pic/chip/2008-01/20080104151156943.jpg">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715102051814">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715102055361">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715102058205">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113331799">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120952346">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113336158">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113346205">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113349424">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113354549">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113357346">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715113400768">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120828299">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120832893">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120835814">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120839470">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120842722">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120845783">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120854939">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120859472">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120903580">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120906128">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120909142">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120912269">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120915346">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120918082">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120921377">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120924207">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120926846">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120929144">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120932127">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120934879">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120938830">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120941770">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120945533">
+<meta property="og:image" content="https://img-blog.csdn.net/20160715120949114">
+<meta property="og:image" content="http://images.cnitblog.com/blog/470909/201304/09122539-f66a4eee9b0341c9ab4e18f4ad6e782c.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/470909/201304/09122758-65cac4b3445f476b9b25338b88fe0595.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/470909/201304/09142332-2dd055f668444f998685034a733f72cc.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/470909/201304/09142452-504d231d43c942b5bf3e311138264c04.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/blog/470909/201304/09142554-b1cc1fcef63e460e9c0186beebbc53ef.jpg">
+<meta property="article:published_time" content="2021-12-27T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-30T02:08:21.029Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20160513212343492">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,161 +121,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/07/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-07-25T07:01:48.846Z" itemprop="datePublished">2025-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/07/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/07/25/hello-world/" data-id="cmdpc9e8d000389n23qglhuf9" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-STA基本方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T00:00:00.000Z" itemprop="datePublished">2021-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">STA基本方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>声明：本文仅为个人学习笔记，原文集合如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/andy_icer/category_9877331.html">https://blog.csdn.net/andy_icer&#x2F;category_9877331.html</a></p>
-<h2 id="时序路径分析方法"><a href="#时序路径分析方法" class="headerlink" title="时序路径分析方法"></a>时序路径分析方法</h2><h3 id="1-建立时间分析"><a href="#1-建立时间分析" class="headerlink" title="1. 建立时间分析"></a>1. 建立时间分析</h3><p><strong>建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间</strong>。这里以最典型的时序路径类型触发器到触发器为例，如图<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQWVhNYUhhUmtFT3YwMmhad244UHZPQ0xpYXFtNExhTzVZd1pIMXNVTWpRVUJ5dFUyUVk5QW96US82NDA?x-oss-process=image/format,png"></p>
-<blockquote>
-<p>始出发点触发器FF0称为数据发射触发器（lauch flip-flop）<br>终止点触发器FF1称为数据捕获器（capture flip-flop）<br>为保证建立时间的满足，由始发点触发器输出的数据必须在下一个时钟有效沿到来前就已经达到稳定<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQeFhXR0NwazhnamZ3SUdoMk54ZlVYOXRLNWliclYxOEN2T0dxOXZFa3JtNXE0blU5QXRKQXhFUS82NDA?x-oss-process=image/format,png"><br>该类型时序路径的建立时间必须满足式：<br><strong>Tlauch+Tck2q+Tdp &lt; Tcapture+Tcycle-Tsetup</strong><br>时序路径的建立时间分析是验证时序路径中时钟与数据之间的时序关系是否满足终止点时序单元建立时间的要求</p>
-</blockquote>
-<h3 id="2-保持时间分析（hold-timing-check）"><a href="#2-保持时间分析（hold-timing-check）" class="headerlink" title="2. 保持时间分析（hold timing check）"></a>2. 保持时间分析（hold timing check）</h3><p><strong>保持时间是指为保证时序单元对数据读取正确，数据在时钟有效沿到来之后仍需要保持稳定的时间</strong>， 依旧以上图为例，为保证保持时间的满足，由终止点触发器接收的数据，必须在捕获时钟有效沿之后继续维持一段稳定的时间，其时序波形图如图所示<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQREFiSmY4UFBrc2xwcU5IMVVJYmliRlc2WmthR2RhSkpvUFpzR1lJTGhNNTlpYktSTDF1cDRRT0EvNjQw?x-oss-process=image/format,png"> </p>
-<blockquote>
-<p>保持时间必须满足式：<br>**Tlauch+Tck2q+Tdp &gt; Tcapture+Thold **</p>
-</blockquote>
-<h2 id="时序单元的相关约束"><a href="#时序单元的相关约束" class="headerlink" title="时序单元的相关约束"></a>时序单元的相关约束</h2><p>时序单元的<strong>时序约束</strong>是为了保证时序单元能够实现正确的逻辑功能所规定的输入或者输出信号数据需要保持稳定的<strong>最小时间间隔值</strong></p>
-<h3 id="1、建立时间"><a href="#1、建立时间" class="headerlink" title="1、建立时间"></a>1、建立时间</h3><p>对于时序单元，建立时间是指时序单元正常工作时，在功能上为了保证正确性，输入信号数据应该在时钟信号有效期到达并保持的最小时间。（计算参数设置一般为50%） </p>
-<p><strong>建立时间的测量值</strong>定义为：<br>从<strong>数据信号的电压达到标准供电电压50%时间点</strong>到时<strong>钟信号电压达到标准供电电压50%时间点</strong>的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173241329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="2、保持时间"><a href="#2、保持时间" class="headerlink" title="2、保持时间"></a>2、保持时间</h3><p>对于时序单元，保持时间是指时序单元要实现正确的逻辑功能，数据信号在时钟沿有效后必须保持的最小时间长度。（计算参数设置一般为50%）</p>
-<p>保持时间的测量值定义为：<br>从时钟信号的电压达到标准供电电压**50%<strong>时间点到数据信号电压达到标准供电电压</strong>50%**时间点的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173318195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="3、恢复时间"><a href="#3、恢复时间" class="headerlink" title="3、恢复时间"></a>3、恢复时间</h3><p>恢复时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效之前保持有效的最小时间长度。（计算参数设置一般为50%）<br>换句话说：reset达到50%到clk达到50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173346525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="4、移除时间"><a href="#4、移除时间" class="headerlink" title="4、移除时间"></a>4、移除时间</h3><p>移除时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效沿之后保持有效的最小时间长度。（计算参数设置一般为50%） </p>
-<p>移除时间的测量值定义为：<br>从时钟信号电压达到标准供电电压50%时间点到复位或者清零信号电压达到标准供电电压50%时间点的时间间隔。<br>换句话说：CLK上升至50%到reset上升至50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173408922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="时钟特性"><a href="#时钟特性" class="headerlink" title="时钟特性"></a>时钟特性</h2><p>时钟特性有三： </p>
-<ol>
-<li><strong>时钟延迟（clock latency）</strong></li>
-<li><strong>时钟偏斜（clock skew）</strong></li>
-<li><strong>时钟抖动（clock jitter）</strong></li>
-</ol>
-<h3 id="1、时钟延迟（clock-latency）"><a href="#1、时钟延迟（clock-latency）" class="headerlink" title="1、时钟延迟（clock latency）"></a>1、时钟延迟（clock latency）</h3><p>def：指时钟信号从时钟源输出端口到达时序单元时钟输入端口所需要的传播时间，如图所示</p>
-<p><img src="https://img-blog.csdnimg.cn/20200406174254984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>由于OCV（片上工艺偏差，On-Chip Variation）和PVT（process工艺、voltage电压、temperature温度）等因素会不同幅度地影响时钟输入的延时不确定性，从而导致整个设计时序的不确定。所以时钟输入延时越短，时钟树性能越好，这样可以减少其他外在因素对时钟树性能的影响。</p>
-<h3 id="2、时钟偏斜（clock-skew）"><a href="#2、时钟偏斜（clock-skew）" class="headerlink" title="2、时钟偏斜（clock skew）"></a>2、时钟偏斜（clock skew）</h3><p>非理想情况下，由于时钟线长度及时钟树叶节点负载不同等因素，导致时钟信号到达同一时序路径下的相邻两个时序单元时钟端口的时间并不相同，这种时钟信号之间的偏移就是相同时钟信号之间的<strong>时钟偏斜</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174359406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>实际设计中，时钟信号到达每一个时序单元时钟端口的延时不可能完全相同，时钟偏斜是肯定存在的，这是时序分析中必须要考虑的因素。 </p>
-<p>静态时序分析主要分为<strong>布局布线前</strong>和<strong>布局布线后</strong>两个阶段</p>
-<p>两者的<strong>主要区别</strong>在于：后者有具体的互连线长度、宽度、信号分布情况等信息</p>
-<p>后者可以更加准确地估计互连线延迟，以及时钟树网络的延迟；前者只能根据设计电路和面积的大小等简单信息估计线上延迟和时钟树的延迟。</p>
-<h3 id="3、时钟抖动（clock-jitter）"><a href="#3、时钟抖动（clock-jitter）" class="headerlink" title="3、时钟抖动（clock jitter）"></a>3、时钟抖动（clock jitter）</h3><p>在时钟电路设计实现中，不同实现单元的速度在不同时刻可能有着大小不一的差别，时钟信号可能并不能准确地在理想的信号边缘到来之前的瞬间保持在其正确的信号值上，它保持稳定所需的时间比理想情况有一定的偏移，这种偏移是在同一个时序单元的时钟输入端口上的时钟偏移。该时钟偏移主要表现为<strong>时钟抖动</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174443212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="时序路径分析模式"><a href="#时序路径分析模式" class="headerlink" title="时序路径分析模式"></a>时序路径分析模式</h2><p>时序路径分析模式中所涉及的两种计算时序路径类型：<strong>最快路径</strong>和<strong>最慢路径</strong>。时序路径分析模式中需要选择 的最快路径和最慢路径进行时序计算。</p>
-<blockquote>
-<p><strong>最快路径（early path）</strong>：指在信号传播延时计算中调用最快工艺参数的路径，根据信号的分类可以分为最快时钟路径和最快数据路径。 </p>
-<p><strong>最慢路径（late path）</strong>：指在信号传播延时计算中调用最慢工艺参数的路径，分为最慢时钟路径和最慢数据路径。 </p>
-</blockquote>
-<p>时序路径的分析模式主要分为三种：<strong>单一分析模式（single mode）</strong>、<strong>最好-最坏分析模式（BC-WC mode）</strong>、<strong>芯片变化相关分析模式（OCV mode）</strong>。三种分析模式的分析方法大同小异，可以理解为只是分析时导入的库不一样</p>
-<h3 id="1、单一分析模式（single-mode）"><a href="#1、单一分析模式（single-mode）" class="headerlink" title="1、单一分析模式（single mode）"></a>1、单一分析模式（single mode）</h3><p>PVT环境一般分为3类：<strong>最好的</strong>、<strong>典型的</strong> 和 <strong>最坏的</strong>工作环境。最好对应较小的工艺偏差、较低的工作温度以及较高的工作电压，最坏对应较大的工艺偏差、较高的工作温度和较低的工作电压，典型则是上述两种极端条件的折中。 </p>
-<p>根据前面所介绍的触发器到触发器时序路径建立时间要求，转换成单一分析模式下建立时间的基本计算公式如下：<br><strong>发射时钟最慢路径延时+最慢数据路径延时 ≤ 捕获时钟最快路径延时+时钟周期-终止点时序单元建立时间</strong> </p>
-<p>下面进行单一分析模式下建立时间计算，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQNzRpY2FtVXdBcUJPYzZvRnl4QVRKQ2NJOHpham5uV2JmUXdxTU9rNGwxVHRsaWM5TFVzQW1pY2NBLzY0MA?x-oss-process=image/format,png"> </p>
-<blockquote>
-<p> 根据图1的延时参数，单一分析模式下建立时间计算结果如下：<br> 时钟周期&#x3D;4<br> 发射时钟最慢路径延时值&#x3D;U1单元延时+U2单元延时&#x3D;0.8+0.6&#x3D;1.4<br> 最慢数据路径延时值&#x3D;3.6<br> 最快数据路径延时值&#x3D;1.9<br> 捕获时钟最快路径延时值&#x3D; U1单元延时+U3单元延时&#x3D;0.8+0.5&#x3D;1.3<br> 时序单元的建立时间要求值&#x3D;0.2<br> <strong>数据到达延时值</strong>&#x3D;发射时钟最慢路径延时值+最慢数据路径延时值&#x3D;1.4+3.6&#x3D;5<br> <strong>数据要求延时值</strong>&#x3D;时钟周期+捕获时钟最快路径延时值-时序单元的建立时间要求值&#x3D;4+1.3-0.2&#x3D;5.1<br> 延时违反值&#x3D;数据要求延时值-数据到达延时值&#x3D;5.1-5&#x3D;0.1<br> 可以认为延时违反值就是slack，slack&gt;0为满足约束，slack&lt;0为违反约束 </p>
-</blockquote>
-<h3 id="2、最好-最坏分析模式（BC-WC-mode）"><a href="#2、最好-最坏分析模式（BC-WC-mode）" class="headerlink" title="2、最好-最坏分析模式（BC-WC mode）"></a>2、最好-最坏分析模式（BC-WC mode）</h3><p>对于BC-WC mode，静态时序分析工具会同时在PVT环境中的最好和最坏的工作环境下检查建立时间和保持时间。BC-WC mode中的基本计算公式和单一分析模式一样，<strong>不同点</strong>在于计算时所使用的的工作环境不同（<em>建立时间调用Max延时时序库，保持时间调用Min延时时序库</em>）。 </p>
-<h3 id="3、芯片变化相关分析模式（OCV-mode）"><a href="#3、芯片变化相关分析模式（OCV-mode）" class="headerlink" title="3、芯片变化相关分析模式（OCV mode）"></a>3、芯片变化相关分析模式（OCV mode）</h3><p>在芯片变化相关工作模式下，计算公式与以上两种一样，静态时序分析工具也会同时在PVT环境中的最好和最坏的工作环境下检查建立时间和保持时间。但是OCV mode用更加苛刻的方法来检测建立时间与保持时间，往往结果分析太过于悲观，不符合实际，因此在实际静态时序分析中，一次只读入一套时序库，并通过设置减免值的方法来达到进行OCV模式分析的目的。 </p>
-<h2 id="时序优化"><a href="#时序优化" class="headerlink" title="时序优化"></a>时序优化</h2><p><strong>解决时序收敛</strong>的问题也是静态时序分析中的主要工作。静态时序分析中可以通过自动和手动两种方式完成物理上和时序上的优化工作，其优化时序的类型主要分为<strong>建立时间</strong>、<strong>保持时间</strong> 和 <strong>时序设计规则</strong>3种。 </p>
-<h3 id="1、基本方法"><a href="#1、基本方法" class="headerlink" title="1、基本方法"></a>1、基本方法</h3><p>优化建立时间和时序设计规则的基本方法主要为以下几种： </p>
-<blockquote>
-<p>（1）改变单元位置<br>（2）改变单元大小<br>（3）插入缓冲单元<br>（4）删除缓冲单元<br>（5）重分配负载<br>（6）时钟有用偏斜</p>
-</blockquote>
-<h4 id="（1）改变单元位置"><a href="#（1）改变单元位置" class="headerlink" title="（1）改变单元位置"></a>（1）改变单元位置</h4><p>不合理的单元物理位置会使信号线过长而导致线负载和线延时变大，从而影响时序收敛。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQZWNXVXFxQnRUTHM0SDYxQ2htN2ZNdG04eEdRZEVudUxPOTVZd2c4ZGNvNjRZWDZBNFJNZXZ3LzY0MA?x-oss-process=image/format,png"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMzJsaWJPUVlPVEsxM29BU25YdnlmSEVxQWFvZGZmaWI1NUNMb3lHc2hBS0VZem9ET0ZUV295Q3cvNjQw?x-oss-process=image/format,png"></p>
-<h4 id="（2）改变单元大小"><a href="#（2）改变单元大小" class="headerlink" title="（2）改变单元大小"></a>（2）改变单元大小</h4><p>通常标准单元库提供了多种驱动能力的单元，由于在相同激励和负载情况下，其<strong>延时与驱动能力近似成线性关系，延时随驱动能力的增大而递减</strong>，因此把由于负载过大导致延时恶化的单元调整为驱动能力更大的同类型单元，可以改善时序性能。同样，驱动能力小的同类型单元其对前级驱动单元所体现的负载电容也较小，如果<strong>将驱动力大的负载单元换成驱动力小的负载单元，可以减小前级驱动单元的输出负载</strong>，从而改善前级驱动单元的时序性能。</p>
-<blockquote>
-<p>延时和驱动能力成negative的线性关系<br>把因为load大从而有延时恶化的单元用更大驱动能力的单元可以改善时序性能<br>将驱动动力大的load单元换成驱动能力小的负载单元可以改善前级驱动单元的输出load，从而改善时序</p>
-</blockquote>
-<h4 id="（3）插入缓冲单元"><a href="#（3）插入缓冲单元" class="headerlink" title="（3）插入缓冲单元"></a>（3）插入缓冲单元</h4><p>随着工艺尺寸的不断缩小，其线<strong>延时增加与线长近似成正比指数性关系</strong>，而<strong>增加缓冲单元个数与延时近似成正比线性关系</strong>。那么在单元位置比较合理，同时单元驱动力已经达到最大时的情况下，如果，单元驱动信号线负载仍然过大而导致延时过大的情况，可以通过在长距离信号线中间增加合适的缓冲单元来提高延时性能，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQR2tHQ1NYYk5ZZ1V2d0UwcmhzbTNpYzBnYWxEN0pqbFFVY3FtdFZkSFNtSlljOW1aVTNrNGV6dy82NDA?x-oss-process=image/format,png"></p>
-<h4 id="（4）删除缓冲单元"><a href="#（4）删除缓冲单元" class="headerlink" title="（4）删除缓冲单元"></a>（4）删除缓冲单元</h4><p>如果设计中存在插入缓冲器单元不合理的情况，那么可以通过删除导致降低时序性能的缓冲单元，来达到优化时序性能的目的。</p>
-<h4 id="（5）重分配负载"><a href="#（5）重分配负载" class="headerlink" title="（5）重分配负载"></a>（5）重分配负载</h4><p>在设计中存在扇出负载不合理的情况，可以通过插入缓冲单元重新分配扇出负载来达到优化时序的目的，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMUJ4SlZPNm5US29kck94cnNKM1N5VEVWSFFtV2J1cENhSzNKdWliR04waWJKY3VMdGJlaFNMcUEvNjQw?x-oss-process=image/format,png"> </p>
-<ol start="6">
-<li>时钟有用偏斜<br>时钟有用偏斜（useful skew）可以用于优化时序性能，其工作原理就是在两个串行的时序路径中，通过借用其中一条时序路径的延时裕度的方法来修复另一条时序路径上时序违反的问题。</li>
-</ol>
-<h3 id="2、优化保持时间的基本方法"><a href="#2、优化保持时间的基本方法" class="headerlink" title="2、优化保持时间的基本方法"></a>2、优化保持时间的基本方法</h3><p>优化保持时间得到方法相对简单，主要是插入延时单元的方法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" data-id="cmdpck6ip0000bqn2aavydkfy" data-title="STA基本方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Verilog基本知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Verilog基本知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="article-date">
   <time class="dt-published" datetime="2021-12-27T00:00:00.000Z" itemprop="datePublished">2021-12-27</time>
@@ -236,8 +134,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Verilog基本知识</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Verilog基本知识
     </h1>
   
 
@@ -549,221 +447,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Verilog基础语法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-12-22T00:00:00.000Z" itemprop="datePublished">2021-12-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Verilog基础语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-OPERATORS"><a href="#1-OPERATORS" class="headerlink" title="1. OPERATORS"></a>1. OPERATORS</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg"></p>
-<h2 id="2-Code-of-Module"><a href="#2-Code-of-Module" class="headerlink" title="2. Code of Module"></a>2. Code of Module</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif"> </p>
-<p>编写如图所示的chip，代码为： </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module arbiter (    </span><br><span class="line">    clock      , // clock  </span><br><span class="line">    reset      , // Active high, syn reset  </span><br><span class="line">    req\_0      , // Request 0  </span><br><span class="line">    req\_1      , // Request 1  </span><br><span class="line">    gnt\_0      , // Grant 0  </span><br><span class="line">    gnt\_1        // Grant 1  </span><br><span class="line">    );  </span><br><span class="line"></span><br><span class="line">//-------------Input Ports-----------------------------  </span><br><span class="line">    input           clock               ;  </span><br><span class="line">    input           reset               ;  </span><br><span class="line">    input           req\_0               ;  </span><br><span class="line">    input           req\_1               ;  </span><br><span class="line">     </span><br><span class="line">//-------------Output Ports----------------------------  </span><br><span class="line">    output        gnt\_0                 ;  </span><br><span class="line">    output        gnt\_1                 ;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><p>This statement is used to check the chondition to decide whether or not to excute a portion of code.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (enable == 1&#x27;b1) begin</span><br><span class="line">    data = 10; // Decimal assigned</span><br><span class="line">    address = 16&#x27;hDEAD; // Hexadecimal</span><br><span class="line">    wr\_enable = 1&#x27;b1; // Binary </span><br><span class="line"> </span><br><span class="line">end else begin</span><br><span class="line">    data = 32&#x27;b0; n   </span><br><span class="line">    wr\_enable = 1&#x27;b0;</span><br><span class="line">    address = address + 1;  </span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>The difference of if-else in verilog between others is that we need to use <strong>begin</strong> and <strong>and</strong> instead of brackets. </p>
-<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><p>The case statement is used where we have one variable which needs to be checked for multiple values. The address decoder is an good example. </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">case(address)</span><br><span class="line">    0 : $display (&quot;...&quot;);</span><br><span class="line">    1 : $display (&quot;...&quot;);</span><br><span class="line">    2 : $display  (&quot;...&quot;);</span><br><span class="line">    default : $display  (&quot;...&quot;);</span><br><span class="line">endcase</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><p>While loop is not used normally in the real life, but it is used in the test bench.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">while (free\_time) begin</span><br><span class="line">    $display (&quot;...&quot;);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-For-Loop"><a href="#3-4-For-Loop" class="headerlink" title="3.4 For Loop"></a>3.4 For Loop</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for (i = 0; i &lt; 16; i = i +1) begin</span><br><span class="line">    $display (&quot;...&quot;, i);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><p>Repeat is used to tell us how many times to run throught the code.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">repeat (16) begin</span><br><span class="line">    $display (&quot;Current value of i is %d&quot;, i);</span><br><span class="line">    i = i + 1;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><p>Initial Block is used at the beginning of the simulation. </p>
-<p>The sensitive list is the one which tells the always block when to execute the block of code, as shown in the figure below. The @ symbol indicates the block will be triggered at the condition in parenthesis. </p>
-<p>The always block can not drive wire data but can drive reg and int data.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">initial begin</span><br><span class="line">    clk = 0;</span><br><span class="line">    reset = 0;</span><br><span class="line">    req\_0 = 0;</span><br><span class="line">    req\_1 = 0;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><p>Always block always excutes. additionally, it also can have a sensitive list or a delay associated with it. </p>
-<h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function"></a>6. Test and Function</h2><p>Wehen we nee to repeat the same old things again and agin, we can use the Task and Funtion. It’s similar with other languages to repeat used codes. </p>
-<p>There is one different between the function and task. Task can have the time delay but function can not. This means that function canbe used ofr modeling combnational logic.</p>
-<p>By the way, function can return a value. whereas task can not.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function parity;</span><br><span class="line">input [31:0] data;</span><br><span class="line">integer i;</span><br><span class="line">begin</span><br><span class="line">    parity = 0;</span><br><span class="line">    for (i= 0; i &lt; 32; i = i + 1) begin</span><br><span class="line">        parity = parity ^ data[i];</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line">endfunction</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" data-id="cmdpck6is0003bqn22kuqfem2" data-title="Verilog基础语法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数字电路基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time class="dt-published" datetime="2021-12-21T00:00:00.000Z" itemprop="datePublished">2021-12-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          STA基本方法
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">数字电路基础</a>
-    </h1>
   
+    <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Verilog基础语法</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="一-原码，反码，补码"><a href="#一-原码，反码，补码" class="headerlink" title="一. 原码，反码，补码"></a>一. 原码，反码，补码</h2><h3 id="1-机器数"><a href="#1-机器数" class="headerlink" title="1. 机器数"></a>1. 机器数</h3><p><strong>机器数</strong>是二进制的数字，带有sign bit，例如：</p>
-<blockquote>
-<p>-3的机器数为10000011<br>3的机器数为00000011</p>
-</blockquote>
-<h3 id="2-真值"><a href="#2-真值" class="headerlink" title="2. 真值"></a>2. 真值</h3><p>首先明确的一个点是什么是<strong>形式值</strong>。即正常二进制转换十进制所得到的数值，例如：</p>
-<blockquote>
-<p>10000011转换成二进制即为131，所以131就是10000011的形式值</p>
-</blockquote>
-<p>但是<strong>真值</strong>可以理解为去掉sign bit，将其他位转换为形式值，例如：</p>
-<blockquote>
-<p>10000011，取MSB为sign bit，1为负数，0000011为3，故10000011的真值为-3</p>
-</blockquote>
-<h3 id="3-原码"><a href="#3-原码" class="headerlink" title="3. 原码"></a>3. 原码</h3><p><strong>原码</strong>为sign bit+真值的绝对值，且MSB为Sign Bit。因此正常二进制32-bit int取值范围为[1111 1111， 0111 111],即为[-127， 127]。</p>
-<h3 id="4-反码"><a href="#4-反码" class="headerlink" title="4. 反码"></a>4. 反码</h3><p>正数<strong>反码</strong>为其本身，负数反码为原码sign bit不变，其余位取反。</p>
-<h3 id="5-补码"><a href="#5-补码" class="headerlink" title="5. 补码"></a>5. 补码</h3><p>正数<strong>补码</strong>为其本身，负数补码为原码基础上，sign bit不变，其余位取反+1。(i.e. 反码+1) </p>
-<hr>
-<h2 id="二-竞争冒险"><a href="#二-竞争冒险" class="headerlink" title="二. 竞争冒险"></a>二. 竞争冒险</h2><p>在实际电路中会存在time dalay，当多个信号发生变化的瞬间，组合的逻辑输出产生先后顺序，这个现象叫做<strong>竞争</strong>。<br>同时time delay会导致实际输出会有毛刺现象，这种情况即为冒险。冒险分两种：</p>
-<blockquote>
-<ol>
-<li>静态冒险</li>
-<li>动态冒险</li>
-</ol>
-</blockquote>
-<p>如果存在两个或者两个以上的输入信号同时产生变化时，输出上产生了毛刺现象，此为<strong>功能冒险</strong>。<br>如果只有一个输入产生变化时才出现冒险，此为<strong>逻辑冒险</strong>。</p>
-<h3 id="1-静态冒险"><a href="#1-静态冒险" class="headerlink" title="1. 静态冒险"></a>1. 静态冒险</h3><p>在一个组合电路输入有变化且输出不应该发生变化的情况下，出现了一次瞬间的错误变化叫做<strong>静态冒险</strong>。</p>
-<h4 id="1-1-0型冒险"><a href="#1-1-0型冒险" class="headerlink" title="1.1 0型冒险####"></a>1.1 0型冒险####</h4><p>0型冒险是指输出原本应该一直为0的时候，由于time delay的原因输出产生了短暂的1输出。</p>
-<h4 id="1-2-1型冒险"><a href="#1-2-1型冒险" class="headerlink" title="1.2 1型冒险"></a>1.2 1型冒险</h4><p>1型冒险是指输出原本应该一直为1的时候，由于time delay的原因输出产生了短暂的0输出。</p>
-<h3 id="2-动态冒险"><a href="#2-动态冒险" class="headerlink" title="2. 动态冒险"></a>2. 动态冒险</h3><p>输入变化时，输出也要变化的时候叫做<strong>动态冒险</strong>。<br>（i.e. 也就是一个输入变化一次从而引发输出变化多次的可能性）<br>因为动态冒险是由于静态冒险产生的，所以动态冒险的电路一定存在静态冒险。</p>
-<h3 id="3-如何判断冒险"><a href="#3-如何判断冒险" class="headerlink" title="3. 如何判断冒险"></a>3. 如何判断冒险</h3><p>可以利用K-map进行静态冒险的检查。类似下图：<br><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmmmrfchtj30750453yo.jpg"><br>AC与AB两个圈相切，这种时候可能会产生冒险。B&#x3D;C&#x3D;1，当A从1变成0的时候，会产生逻辑冒险。那么如何消除呢，这时候我们需要对原来的SOP后面加上BC即可消除输出的毛刺现象。</p>
-<h3 id="4-如何消除毛刺"><a href="#4-如何消除毛刺" class="headerlink" title="4. 如何消除毛刺"></a>4. 如何消除毛刺</h3><p>首先需要确认一点，毛刺不是对所有的输入都是有害的，例如DFF的输入端，只要毛刺不在time edge并且满足数据建立和保持时间，则对系统无害，但是我们还是需要尽可能地取减少毛刺现象。可以通过以下方法： </p>
-<blockquote>
-<ol>
-<li>尽量使用synchronous design</li>
-<li>在SOP或者POS中增加K-Map当中相切圆的term</li>
-<li>通过在输出增加并联的电容减少毛刺的影响</li>
-</ol>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" data-id="cmdpck6it0007bqn2h0g65wsr" data-title="数字电路基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-历程之始" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" class="article-date">
-  <time class="dt-published" datetime="2021-12-20T00:00:00.000Z" itemprop="datePublished">2021-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/">历程之始</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>历时一天搭建好了这个blog，希望用这个网站记录我的历程。</p>
-<h2 id="寒假规划（12-20-2021–01-10-2022）"><a href="#寒假规划（12-20-2021–01-10-2022）" class="headerlink" title="寒假规划（12.20.2021–01.10.2022）"></a>寒假规划（12.20.2021–01.10.2022）</h2><hr>
-<h3 id="华为机考准备（01-05-2022）"><a href="#华为机考准备（01-05-2022）" class="headerlink" title="华为机考准备（01.05.2022）"></a>华为机考准备（01.05.2022）</h3><ul>
-<li>数字电路系统</li>
-<li>System Verilog验证</li>
-<li>Verilog学习</li>
-<li>半导体制造技术</li>
-<li>高级ASIC芯片综合</li>
-<li>复杂SOC设计</li>
-</ul>
-<h3 id="课程"><a href="#课程" class="headerlink" title="课程"></a>课程</h3><ul>
-<li>ARTH (12.13-01.07)</li>
-<li>FIN (12.22-1.18)</li>
-<li>NURT (due to 3&#x2F;10 )</li>
-</ul>
-<h3 id="需要再次学习（如有时间）"><a href="#需要再次学习（如有时间）" class="headerlink" title="需要再次学习（如有时间）"></a>需要再次学习（如有时间）</h3><ul>
-<li>半导体物理与器件</li>
-<li>信号与系统</li>
-<li>微电子元器件</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" data-id="cmdpck6ir0001bqn2afpk32c5" data-title="历程之始" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>

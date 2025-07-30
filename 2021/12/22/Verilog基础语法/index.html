@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Verilog基础语法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. OPERATORS 2. Code of Module  编写如图所示的chip，代码为：  1234567891011121314151617181920module arbiter (        clock      , &#x2F;&#x2F; clock      reset      , &#x2F;&#x2F; Active high, syn reset      req\_0      , &#x2F;&#x2F; Request">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Verilog基础语法">
+<meta property="og:url" content="http://example.com/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. OPERATORS 2. Code of Module  编写如图所示的chip，代码为：  1234567891011121314151617181920module arbiter (        clock      , &#x2F;&#x2F; clock      reset      , &#x2F;&#x2F; Active high, syn reset      req\_0      , &#x2F;&#x2F; Request">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif">
+<meta property="article:published_time" content="2021-12-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-30T02:08:21.767Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Verilog基础语法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-12-22T00:00:00.000Z" itemprop="datePublished">2021-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Verilog基础语法
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-OPERATORS"><a href="#1-OPERATORS" class="headerlink" title="1. OPERATORS"></a>1. OPERATORS</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg"></p>
+<h2 id="2-Code-of-Module"><a href="#2-Code-of-Module" class="headerlink" title="2. Code of Module"></a>2. Code of Module</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif"> </p>
+<p>编写如图所示的chip，代码为： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module arbiter (    </span><br><span class="line">    clock      , // clock  </span><br><span class="line">    reset      , // Active high, syn reset  </span><br><span class="line">    req\_0      , // Request 0  </span><br><span class="line">    req\_1      , // Request 1  </span><br><span class="line">    gnt\_0      , // Grant 0  </span><br><span class="line">    gnt\_1        // Grant 1  </span><br><span class="line">    );  </span><br><span class="line"></span><br><span class="line">//-------------Input Ports-----------------------------  </span><br><span class="line">    input           clock               ;  </span><br><span class="line">    input           reset               ;  </span><br><span class="line">    input           req\_0               ;  </span><br><span class="line">    input           req\_1               ;  </span><br><span class="line">     </span><br><span class="line">//-------------Output Ports----------------------------  </span><br><span class="line">    output        gnt\_0                 ;  </span><br><span class="line">    output        gnt\_1                 ;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><p>This statement is used to check the chondition to decide whether or not to excute a portion of code.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (enable == 1&#x27;b1) begin</span><br><span class="line">    data = 10; // Decimal assigned</span><br><span class="line">    address = 16&#x27;hDEAD; // Hexadecimal</span><br><span class="line">    wr\_enable = 1&#x27;b1; // Binary </span><br><span class="line"> </span><br><span class="line">end else begin</span><br><span class="line">    data = 32&#x27;b0; n   </span><br><span class="line">    wr\_enable = 1&#x27;b0;</span><br><span class="line">    address = address + 1;  </span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>The difference of if-else in verilog between others is that we need to use <strong>begin</strong> and <strong>and</strong> instead of brackets. </p>
+<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><p>The case statement is used where we have one variable which needs to be checked for multiple values. The address decoder is an good example. </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">case(address)</span><br><span class="line">    0 : $display (&quot;...&quot;);</span><br><span class="line">    1 : $display (&quot;...&quot;);</span><br><span class="line">    2 : $display  (&quot;...&quot;);</span><br><span class="line">    default : $display  (&quot;...&quot;);</span><br><span class="line">endcase</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><p>While loop is not used normally in the real life, but it is used in the test bench.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">while (free\_time) begin</span><br><span class="line">    $display (&quot;...&quot;);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-For-Loop"><a href="#3-4-For-Loop" class="headerlink" title="3.4 For Loop"></a>3.4 For Loop</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for (i = 0; i &lt; 16; i = i +1) begin</span><br><span class="line">    $display (&quot;...&quot;, i);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><p>Repeat is used to tell us how many times to run throught the code.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">repeat (16) begin</span><br><span class="line">    $display (&quot;Current value of i is %d&quot;, i);</span><br><span class="line">    i = i + 1;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><p>Initial Block is used at the beginning of the simulation. </p>
+<p>The sensitive list is the one which tells the always block when to execute the block of code, as shown in the figure below. The @ symbol indicates the block will be triggered at the condition in parenthesis. </p>
+<p>The always block can not drive wire data but can drive reg and int data.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">initial begin</span><br><span class="line">    clk = 0;</span><br><span class="line">    reset = 0;</span><br><span class="line">    req\_0 = 0;</span><br><span class="line">    req\_1 = 0;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><p>Always block always excutes. additionally, it also can have a sensitive list or a delay associated with it. </p>
+<h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function"></a>6. Test and Function</h2><p>Wehen we nee to repeat the same old things again and agin, we can use the Task and Funtion. It’s similar with other languages to repeat used codes. </p>
+<p>There is one different between the function and task. Task can have the time delay but function can not. This means that function canbe used ofr modeling combnational logic.</p>
+<p>By the way, function can return a value. whereas task can not.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function parity;</span><br><span class="line">input [31:0] data;</span><br><span class="line">integer i;</span><br><span class="line">begin</span><br><span class="line">    parity = 0;</span><br><span class="line">    for (i= 0; i &lt; 32; i = i + 1) begin</span><br><span class="line">        parity = parity ^ data[i];</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line">endfunction</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" data-id="cmdpck6is0003bqn22kuqfem2" data-title="Verilog基础语法" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Verilog基本知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数字电路基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/notes/" style="font-size: 10px;">notes</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">STA基本方法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Verilog基本知识</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Verilog基础语法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">数字电路基础</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
