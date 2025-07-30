@@ -1,879 +1,576 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/07/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-07-25T07:01:48.846Z" itemprop="datePublished">2025-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/07/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/07/25/hello-world/" data-id="cmdpc9e8d000389n23qglhuf9" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-STA基本方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T00:00:00.000Z" itemprop="datePublished">2021-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">STA基本方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>声明：本文仅为个人学习笔记，原文集合如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/andy_icer/category_9877331.html">https://blog.csdn.net/andy_icer&#x2F;category_9877331.html</a></p>
-<h2 id="时序路径分析方法"><a href="#时序路径分析方法" class="headerlink" title="时序路径分析方法"></a>时序路径分析方法</h2><h3 id="1-建立时间分析"><a href="#1-建立时间分析" class="headerlink" title="1. 建立时间分析"></a>1. 建立时间分析</h3><p><strong>建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间</strong>。这里以最典型的时序路径类型触发器到触发器为例，如图<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQWVhNYUhhUmtFT3YwMmhad244UHZPQ0xpYXFtNExhTzVZd1pIMXNVTWpRVUJ5dFUyUVk5QW96US82NDA?x-oss-process=image/format,png"></p>
-<blockquote>
-<p>始出发点触发器FF0称为数据发射触发器（lauch flip-flop）<br>终止点触发器FF1称为数据捕获器（capture flip-flop）<br>为保证建立时间的满足，由始发点触发器输出的数据必须在下一个时钟有效沿到来前就已经达到稳定<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQeFhXR0NwazhnamZ3SUdoMk54ZlVYOXRLNWliclYxOEN2T0dxOXZFa3JtNXE0blU5QXRKQXhFUS82NDA?x-oss-process=image/format,png"><br>该类型时序路径的建立时间必须满足式：<br><strong>Tlauch+Tck2q+Tdp &lt; Tcapture+Tcycle-Tsetup</strong><br>时序路径的建立时间分析是验证时序路径中时钟与数据之间的时序关系是否满足终止点时序单元建立时间的要求</p>
-</blockquote>
-<h3 id="2-保持时间分析（hold-timing-check）"><a href="#2-保持时间分析（hold-timing-check）" class="headerlink" title="2. 保持时间分析（hold timing check）"></a>2. 保持时间分析（hold timing check）</h3><p><strong>保持时间是指为保证时序单元对数据读取正确，数据在时钟有效沿到来之后仍需要保持稳定的时间</strong>， 依旧以上图为例，为保证保持时间的满足，由终止点触发器接收的数据，必须在捕获时钟有效沿之后继续维持一段稳定的时间，其时序波形图如图所示<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQREFiSmY4UFBrc2xwcU5IMVVJYmliRlc2WmthR2RhSkpvUFpzR1lJTGhNNTlpYktSTDF1cDRRT0EvNjQw?x-oss-process=image/format,png"> </p>
-<blockquote>
-<p>保持时间必须满足式：<br>**Tlauch+Tck2q+Tdp &gt; Tcapture+Thold **</p>
-</blockquote>
-<h2 id="时序单元的相关约束"><a href="#时序单元的相关约束" class="headerlink" title="时序单元的相关约束"></a>时序单元的相关约束</h2><p>时序单元的<strong>时序约束</strong>是为了保证时序单元能够实现正确的逻辑功能所规定的输入或者输出信号数据需要保持稳定的<strong>最小时间间隔值</strong></p>
-<h3 id="1、建立时间"><a href="#1、建立时间" class="headerlink" title="1、建立时间"></a>1、建立时间</h3><p>对于时序单元，建立时间是指时序单元正常工作时，在功能上为了保证正确性，输入信号数据应该在时钟信号有效期到达并保持的最小时间。（计算参数设置一般为50%） </p>
-<p><strong>建立时间的测量值</strong>定义为：<br>从<strong>数据信号的电压达到标准供电电压50%时间点</strong>到时<strong>钟信号电压达到标准供电电压50%时间点</strong>的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173241329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="2、保持时间"><a href="#2、保持时间" class="headerlink" title="2、保持时间"></a>2、保持时间</h3><p>对于时序单元，保持时间是指时序单元要实现正确的逻辑功能，数据信号在时钟沿有效后必须保持的最小时间长度。（计算参数设置一般为50%）</p>
-<p>保持时间的测量值定义为：<br>从时钟信号的电压达到标准供电电压**50%<strong>时间点到数据信号电压达到标准供电电压</strong>50%**时间点的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173318195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="3、恢复时间"><a href="#3、恢复时间" class="headerlink" title="3、恢复时间"></a>3、恢复时间</h3><p>恢复时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效之前保持有效的最小时间长度。（计算参数设置一般为50%）<br>换句话说：reset达到50%到clk达到50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173346525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="4、移除时间"><a href="#4、移除时间" class="headerlink" title="4、移除时间"></a>4、移除时间</h3><p>移除时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效沿之后保持有效的最小时间长度。（计算参数设置一般为50%） </p>
-<p>移除时间的测量值定义为：<br>从时钟信号电压达到标准供电电压50%时间点到复位或者清零信号电压达到标准供电电压50%时间点的时间间隔。<br>换句话说：CLK上升至50%到reset上升至50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173408922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="时钟特性"><a href="#时钟特性" class="headerlink" title="时钟特性"></a>时钟特性</h2><p>时钟特性有三： </p>
-<ol>
-<li><strong>时钟延迟（clock latency）</strong></li>
-<li><strong>时钟偏斜（clock skew）</strong></li>
-<li><strong>时钟抖动（clock jitter）</strong></li>
-</ol>
-<h3 id="1、时钟延迟（clock-latency）"><a href="#1、时钟延迟（clock-latency）" class="headerlink" title="1、时钟延迟（clock latency）"></a>1、时钟延迟（clock latency）</h3><p>def：指时钟信号从时钟源输出端口到达时序单元时钟输入端口所需要的传播时间，如图所示</p>
-<p><img src="https://img-blog.csdnimg.cn/20200406174254984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>由于OCV（片上工艺偏差，On-Chip Variation）和PVT（process工艺、voltage电压、temperature温度）等因素会不同幅度地影响时钟输入的延时不确定性，从而导致整个设计时序的不确定。所以时钟输入延时越短，时钟树性能越好，这样可以减少其他外在因素对时钟树性能的影响。</p>
-<h3 id="2、时钟偏斜（clock-skew）"><a href="#2、时钟偏斜（clock-skew）" class="headerlink" title="2、时钟偏斜（clock skew）"></a>2、时钟偏斜（clock skew）</h3><p>非理想情况下，由于时钟线长度及时钟树叶节点负载不同等因素，导致时钟信号到达同一时序路径下的相邻两个时序单元时钟端口的时间并不相同，这种时钟信号之间的偏移就是相同时钟信号之间的<strong>时钟偏斜</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174359406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>实际设计中，时钟信号到达每一个时序单元时钟端口的延时不可能完全相同，时钟偏斜是肯定存在的，这是时序分析中必须要考虑的因素。 </p>
-<p>静态时序分析主要分为<strong>布局布线前</strong>和<strong>布局布线后</strong>两个阶段</p>
-<p>两者的<strong>主要区别</strong>在于：后者有具体的互连线长度、宽度、信号分布情况等信息</p>
-<p>后者可以更加准确地估计互连线延迟，以及时钟树网络的延迟；前者只能根据设计电路和面积的大小等简单信息估计线上延迟和时钟树的延迟。</p>
-<h3 id="3、时钟抖动（clock-jitter）"><a href="#3、时钟抖动（clock-jitter）" class="headerlink" title="3、时钟抖动（clock jitter）"></a>3、时钟抖动（clock jitter）</h3><p>在时钟电路设计实现中，不同实现单元的速度在不同时刻可能有着大小不一的差别，时钟信号可能并不能准确地在理想的信号边缘到来之前的瞬间保持在其正确的信号值上，它保持稳定所需的时间比理想情况有一定的偏移，这种偏移是在同一个时序单元的时钟输入端口上的时钟偏移。该时钟偏移主要表现为<strong>时钟抖动</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174443212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h2 id="时序路径分析模式"><a href="#时序路径分析模式" class="headerlink" title="时序路径分析模式"></a>时序路径分析模式</h2><p>时序路径分析模式中所涉及的两种计算时序路径类型：<strong>最快路径</strong>和<strong>最慢路径</strong>。时序路径分析模式中需要选择 的最快路径和最慢路径进行时序计算。</p>
-<blockquote>
-<p><strong>最快路径（early path）</strong>：指在信号传播延时计算中调用最快工艺参数的路径，根据信号的分类可以分为最快时钟路径和最快数据路径。 </p>
-<p><strong>最慢路径（late path）</strong>：指在信号传播延时计算中调用最慢工艺参数的路径，分为最慢时钟路径和最慢数据路径。 </p>
-</blockquote>
-<p>时序路径的分析模式主要分为三种：<strong>单一分析模式（single mode）</strong>、<strong>最好-最坏分析模式（BC-WC mode）</strong>、<strong>芯片变化相关分析模式（OCV mode）</strong>。三种分析模式的分析方法大同小异，可以理解为只是分析时导入的库不一样</p>
-<h3 id="1、单一分析模式（single-mode）"><a href="#1、单一分析模式（single-mode）" class="headerlink" title="1、单一分析模式（single mode）"></a>1、单一分析模式（single mode）</h3><p>PVT环境一般分为3类：<strong>最好的</strong>、<strong>典型的</strong> 和 <strong>最坏的</strong>工作环境。最好对应较小的工艺偏差、较低的工作温度以及较高的工作电压，最坏对应较大的工艺偏差、较高的工作温度和较低的工作电压，典型则是上述两种极端条件的折中。 </p>
-<p>根据前面所介绍的触发器到触发器时序路径建立时间要求，转换成单一分析模式下建立时间的基本计算公式如下：<br><strong>发射时钟最慢路径延时+最慢数据路径延时 ≤ 捕获时钟最快路径延时+时钟周期-终止点时序单元建立时间</strong> </p>
-<p>下面进行单一分析模式下建立时间计算，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQNzRpY2FtVXdBcUJPYzZvRnl4QVRKQ2NJOHpham5uV2JmUXdxTU9rNGwxVHRsaWM5TFVzQW1pY2NBLzY0MA?x-oss-process=image/format,png"> </p>
-<blockquote>
-<p> 根据图1的延时参数，单一分析模式下建立时间计算结果如下：<br> 时钟周期&#x3D;4<br> 发射时钟最慢路径延时值&#x3D;U1单元延时+U2单元延时&#x3D;0.8+0.6&#x3D;1.4<br> 最慢数据路径延时值&#x3D;3.6<br> 最快数据路径延时值&#x3D;1.9<br> 捕获时钟最快路径延时值&#x3D; U1单元延时+U3单元延时&#x3D;0.8+0.5&#x3D;1.3<br> 时序单元的建立时间要求值&#x3D;0.2<br> <strong>数据到达延时值</strong>&#x3D;发射时钟最慢路径延时值+最慢数据路径延时值&#x3D;1.4+3.6&#x3D;5<br> <strong>数据要求延时值</strong>&#x3D;时钟周期+捕获时钟最快路径延时值-时序单元的建立时间要求值&#x3D;4+1.3-0.2&#x3D;5.1<br> 延时违反值&#x3D;数据要求延时值-数据到达延时值&#x3D;5.1-5&#x3D;0.1<br> 可以认为延时违反值就是slack，slack&gt;0为满足约束，slack&lt;0为违反约束 </p>
-</blockquote>
-<h3 id="2、最好-最坏分析模式（BC-WC-mode）"><a href="#2、最好-最坏分析模式（BC-WC-mode）" class="headerlink" title="2、最好-最坏分析模式（BC-WC mode）"></a>2、最好-最坏分析模式（BC-WC mode）</h3><p>对于BC-WC mode，静态时序分析工具会同时在PVT环境中的最好和最坏的工作环境下检查建立时间和保持时间。BC-WC mode中的基本计算公式和单一分析模式一样，<strong>不同点</strong>在于计算时所使用的的工作环境不同（<em>建立时间调用Max延时时序库，保持时间调用Min延时时序库</em>）。 </p>
-<h3 id="3、芯片变化相关分析模式（OCV-mode）"><a href="#3、芯片变化相关分析模式（OCV-mode）" class="headerlink" title="3、芯片变化相关分析模式（OCV mode）"></a>3、芯片变化相关分析模式（OCV mode）</h3><p>在芯片变化相关工作模式下，计算公式与以上两种一样，静态时序分析工具也会同时在PVT环境中的最好和最坏的工作环境下检查建立时间和保持时间。但是OCV mode用更加苛刻的方法来检测建立时间与保持时间，往往结果分析太过于悲观，不符合实际，因此在实际静态时序分析中，一次只读入一套时序库，并通过设置减免值的方法来达到进行OCV模式分析的目的。 </p>
-<h2 id="时序优化"><a href="#时序优化" class="headerlink" title="时序优化"></a>时序优化</h2><p><strong>解决时序收敛</strong>的问题也是静态时序分析中的主要工作。静态时序分析中可以通过自动和手动两种方式完成物理上和时序上的优化工作，其优化时序的类型主要分为<strong>建立时间</strong>、<strong>保持时间</strong> 和 <strong>时序设计规则</strong>3种。 </p>
-<h3 id="1、基本方法"><a href="#1、基本方法" class="headerlink" title="1、基本方法"></a>1、基本方法</h3><p>优化建立时间和时序设计规则的基本方法主要为以下几种： </p>
-<blockquote>
-<p>（1）改变单元位置<br>（2）改变单元大小<br>（3）插入缓冲单元<br>（4）删除缓冲单元<br>（5）重分配负载<br>（6）时钟有用偏斜</p>
-</blockquote>
-<h4 id="（1）改变单元位置"><a href="#（1）改变单元位置" class="headerlink" title="（1）改变单元位置"></a>（1）改变单元位置</h4><p>不合理的单元物理位置会使信号线过长而导致线负载和线延时变大，从而影响时序收敛。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQZWNXVXFxQnRUTHM0SDYxQ2htN2ZNdG04eEdRZEVudUxPOTVZd2c4ZGNvNjRZWDZBNFJNZXZ3LzY0MA?x-oss-process=image/format,png"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMzJsaWJPUVlPVEsxM29BU25YdnlmSEVxQWFvZGZmaWI1NUNMb3lHc2hBS0VZem9ET0ZUV295Q3cvNjQw?x-oss-process=image/format,png"></p>
-<h4 id="（2）改变单元大小"><a href="#（2）改变单元大小" class="headerlink" title="（2）改变单元大小"></a>（2）改变单元大小</h4><p>通常标准单元库提供了多种驱动能力的单元，由于在相同激励和负载情况下，其<strong>延时与驱动能力近似成线性关系，延时随驱动能力的增大而递减</strong>，因此把由于负载过大导致延时恶化的单元调整为驱动能力更大的同类型单元，可以改善时序性能。同样，驱动能力小的同类型单元其对前级驱动单元所体现的负载电容也较小，如果<strong>将驱动力大的负载单元换成驱动力小的负载单元，可以减小前级驱动单元的输出负载</strong>，从而改善前级驱动单元的时序性能。</p>
-<blockquote>
-<p>延时和驱动能力成negative的线性关系<br>把因为load大从而有延时恶化的单元用更大驱动能力的单元可以改善时序性能<br>将驱动动力大的load单元换成驱动能力小的负载单元可以改善前级驱动单元的输出load，从而改善时序</p>
-</blockquote>
-<h4 id="（3）插入缓冲单元"><a href="#（3）插入缓冲单元" class="headerlink" title="（3）插入缓冲单元"></a>（3）插入缓冲单元</h4><p>随着工艺尺寸的不断缩小，其线<strong>延时增加与线长近似成正比指数性关系</strong>，而<strong>增加缓冲单元个数与延时近似成正比线性关系</strong>。那么在单元位置比较合理，同时单元驱动力已经达到最大时的情况下，如果，单元驱动信号线负载仍然过大而导致延时过大的情况，可以通过在长距离信号线中间增加合适的缓冲单元来提高延时性能，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQR2tHQ1NYYk5ZZ1V2d0UwcmhzbTNpYzBnYWxEN0pqbFFVY3FtdFZkSFNtSlljOW1aVTNrNGV6dy82NDA?x-oss-process=image/format,png"></p>
-<h4 id="（4）删除缓冲单元"><a href="#（4）删除缓冲单元" class="headerlink" title="（4）删除缓冲单元"></a>（4）删除缓冲单元</h4><p>如果设计中存在插入缓冲器单元不合理的情况，那么可以通过删除导致降低时序性能的缓冲单元，来达到优化时序性能的目的。</p>
-<h4 id="（5）重分配负载"><a href="#（5）重分配负载" class="headerlink" title="（5）重分配负载"></a>（5）重分配负载</h4><p>在设计中存在扇出负载不合理的情况，可以通过插入缓冲单元重新分配扇出负载来达到优化时序的目的，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMUJ4SlZPNm5US29kck94cnNKM1N5VEVWSFFtV2J1cENhSzNKdWliR04waWJKY3VMdGJlaFNMcUEvNjQw?x-oss-process=image/format,png"> </p>
-<ol start="6">
-<li>时钟有用偏斜<br>时钟有用偏斜（useful skew）可以用于优化时序性能，其工作原理就是在两个串行的时序路径中，通过借用其中一条时序路径的延时裕度的方法来修复另一条时序路径上时序违反的问题。</li>
-</ol>
-<h3 id="2、优化保持时间的基本方法"><a href="#2、优化保持时间的基本方法" class="headerlink" title="2、优化保持时间的基本方法"></a>2、优化保持时间的基本方法</h3><p>优化保持时间得到方法相对简单，主要是插入延时单元的方法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" data-id="cmdpck6ip0000bqn2aavydkfy" data-title="STA基本方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Verilog基本知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T00:00:00.000Z" itemprop="datePublished">2021-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Verilog基本知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>声明：本文仅为个人学习笔记，原文集合如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/times/_poem/category/_6245867.html">https://blog.csdn.net/times\_poem/category\_6245867.html</a></p>
-<h2 id="0-define、parameter、localparam三者的区别"><a href="#0-define、parameter、localparam三者的区别" class="headerlink" title="0. define、parameter、localparam三者的区别"></a>0. define、parameter、localparam三者的区别</h2><h3 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h3><p>define： </p>
-<blockquote>
-<p>作用 -&gt; 常用于定义常量可以跨模块、跨文件;<br>范围 -&gt; 整个工程; </p>
-</blockquote>
-<p>parameter： </p>
-<blockquote>
-<p>作用 -&gt; 常用于模块间参数传递;<br>范围 -&gt; 本module内有效的定义;</p>
-</blockquote>
-<p>localparam：</p>
-<blockquote>
-<p>作用 -&gt; 常用于状态机的参数定义;<br>范围 -&gt; 本module内有效的定义，不可用于参数传递; </p>
-</blockquote>
-<h3 id="2、应用举例"><a href="#2、应用举例" class="headerlink" title="2、应用举例"></a>2、应用举例</h3><p>&#96;define：</p>
-<blockquote>
-<p>概念：可以跨模块的定义，写在模块名称上面，在整个设计工程都有效。一旦&#96;define指令被编译，其在整个编译过程中都有效。<br>例如，通过另一个文件中的define指令，定义的常量可以被其他文件调用,直到遇到undef；</p>
-<p>举例：<br>定义 define UART_CNT 10’d1024<br>使用UART_CNT</p>
-</blockquote>
-<p>parameter：</p>
-<blockquote>
-<p>概念：本module内有效的定义，可用于参数传递，如果在模块内部定义时无法进行参数传递，若在模块名后照下面这样写则可以进行传递<br>调用此模块的时候可以像端口信号传递一样进行参数传递</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module video\_in</span><br><span class="line">           #(</span><br><span class="line">          parameter MEM\_DATA\_BITS = 64,</span><br><span class="line">          parameter INTERLACE     = 1      // 0</span><br><span class="line">          )</span><br><span class="line">          (</span><br><span class="line">           input     clk,</span><br><span class="line">           input     rst\_n,</span><br><span class="line">           output    burst\_finsh</span><br><span class="line">          );</span><br><span class="line">video\_in</span><br><span class="line">       #( .MEM\_DATA\_BITS ( 64 ),</span><br><span class="line">          .INTERLACE     ( 1  )</span><br><span class="line">        )</span><br><span class="line">       u\_video\_in (</span><br><span class="line">        .clk             (clk\_50m),</span><br><span class="line">        .rst\_n          (rst\_n),</span><br><span class="line">        .burst\_finsh (burst\_finsh)</span><br><span class="line">        );  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</blockquote>
-<p>localparam：</p>
-<blockquote>
-<p>概念：本module内有效的定义，不可用于参数传递；一般情况下，状态机的参数都是用localparam的。 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">localparam BURST\_LEN               = 10&#x27;d64;     /*一次写操作数据长度 */   </span><br><span class="line">localparam BURST\_IDLE              = 3&#x27;d0;       /*状态机状态：空闲 */</span><br><span class="line">localparam BURST\_ONE\_LINE\_START    = 3&#x27;d1;       /*状态机状态：视频数据一行写开始 */</span><br><span class="line">localparam BURSTING                = 3&#x27;d2;       /*状态机状态：正在处理一次ddr2写操作 */</span><br><span class="line">localparam BURST\_END               = 3&#x27;d3;       /*状态机状态：一次ddr2写操作完成*/</span><br><span class="line">localparam BURST\_ONE\_LINE\_END      = 3&#x27;d4;       /*状态机状态：视频数据一行写完成*/  </span><br><span class="line">reg[2:0]  burst\_state              = 3&#x27;d0;       /*状态机状态：当前状态 */</span><br><span class="line">reg[2:0]  burst\_state\_next         = 3&#x27;d0;       /*状态机状态：下一个状态*/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</blockquote>
-<h2 id="1-FPGA-设计的四种常用思想与技巧之一-–-乒乓操作"><a href="#1-FPGA-设计的四种常用思想与技巧之一-–-乒乓操作" class="headerlink" title="1. FPGA 设计的四种常用思想与技巧之一 – 乒乓操作"></a>1. FPGA 设计的四种常用思想与技巧之一 – 乒乓操作</h2><p>四种常用 FPGA&#x2F;CPLD设计思想与技巧：</p>
-<ol>
-<li>乒乓操作</li>
-<li>串并转换</li>
-<li>流水线操作</li>
-<li>数据接口同步化</li>
-</ol>
-<h3 id="一、乒乓操作"><a href="#一、乒乓操作" class="headerlink" title="一、乒乓操作"></a>一、乒乓操作</h3><p>“ 乒乓操作” 是一个常常应用于<strong>数据流控制</strong>的处理技巧， 典型的乒乓操作方法如图 1 所示。<img src="https://img-blog.csdn.net/20160513212343492"><br>乒乓操作的处理流程为：</p>
-<blockquote>
-<p>输入数据流通过“输入数据选择单元” 将数据流等时分配到两个数据缓冲区， 数据缓冲模块可以为任何存储模块， 比较常用的存储单元为双口RAM(DPRAM)、单口RAM(SPRAM)、FIFO等。 </p>
-<p>在第1个缓冲周期，将输入的数据流缓存到“ 数据缓冲模块1” ；<br>在第2个缓冲周期， 通过“ 输入数据选择单元” 的切换， 将输入的数据流缓存到“ 数据缓冲模块2” ， 同时将“ 数据缓冲模块1” 缓存的第1个周期数据通过“ 输出数据选择单元” 的选择，送到“ 数据流运算处理模块” 进行运算处理；<br>在第3个缓冲周期通过“ 输入数据选择单元” 的再次切换，将输入的数据流缓存到“数据缓冲模块1” ，同时将“数据缓冲模块2”缓存的第2个周期的数据通过“输出数据选择单元” 切换，送到“数据流运算处理模块” 进行运算处理。 如此循环。 </p>
-<p><strong>最大特点</strong>是通过“ 输入数据选择单元” 和“ 输出数据选择单元” 按节拍、相互配合的切换， 将经过缓冲的数据流<strong>没有停顿</strong>地送到“ 数据流运算处理模块” 进行运算与处理。 </p>
-<p>乒乓操作常常应用于流水线式算法， 完成数据的无缝缓冲与处理。 </p>
-<p>第二个优点是可以<strong>节约缓冲区空间</strong>。<br>比如在WCDMA 基带应用中，1 个帧是由15个时隙组成的， 有时需要将1 整帧的数据延时一个时隙后处理， 比较直接的办法是将这帧数据缓存起来， 然后延时1 个时隙进行处理。 这时缓冲区的长度是1 整帧数据长， 假设数据速率是3.84Mbps，1 帧长10ms， 则此时需要缓冲区长度是38400 位。<br>如果采用乒乓操作， 只需定义两个能缓冲1 个时隙数据的 RAM(单口 RAM 即可)。 当向一块RAM 写数据的时候， 从另一块 RAM 读数据， 然后送到处理单元处理， 此时每块 RAM 的容量仅需2560 位即可，2块 RAM 加起来也只有 5120 位的容量。 </p>
-<p>乒乓操作还可以达到<strong>用低速模块处理高速数据流</strong>的效果<br><img src="https://img-blog.csdn.net/20160513212350208"><br>A 端口处输入数据流速率为 100Mbps， 在第1 个缓冲周期10ms 内， 通过“ 输入数据选择单元” ， 从B1 到达DPRAM1。B1 的数据速率也是100Mbps，DPRAM1 要在10ms 内写入1Mb 数据。同理， 在第2 个 10ms， 数据流被切换到DPRAM2， 端口 B2 的数据速率也是 100Mbps， DPRAM2在第 2 个 10ms 被写入 1Mb 数据。 在第 3 个 10ms， 数据流又切换到 DPRAM1， DPRAM1 被写入1Mb数据。仔细分析就会发现到第 3 个缓冲周期时，留给 DPRAM1 读取数据并送到“ 数据预处理模块 1”的时间一共是 20ms。 有的工程师困惑于 DPRAM1 的读数时间为什么是 20ms， 这个时间是这样得来的： 首先， 在在第 2 个缓冲周期向DPRAM2 写数据的 10ms 内， DPRAM1 可以进行读操作； </p>
-<p>另外， 在第 1 个缓冲周期的第 5ms起(绝对时间为5ms 时刻)，DPRAM1 就可以一边向500K 以后的地址写数据， 一边从地址0 读数， 到达10ms 时，DPRAM1 刚好写完了1Mb 数据， 并且读了500K 数据， 这个缓冲时间内DPRAM1 读了5ms； 在第3 个缓冲周期的第5ms 起(绝对时间为35ms 时刻)， 同理可以一边向500K 以后的地址写数据一边从地址0 读数， 又读取了5 个ms， 所以截止DPRAM1 第一个周期存入的数据被完全覆盖以前，DPRAM1 最多可以读取20ms时间， 而所需读取的数据为1Mb， 所以端口C1 的数据速率为：1Mb&#x2F;20ms&#x3D;50Mbps。 因此， “ 数据预处理模块1” 的最低数据吞吐能力也仅仅要求为50Mbps。 同理， “ 数据预处理模块2”的最低数据吞吐能力也仅仅要求为50Mbps。 换言之， 通过乒乓操作， “ 数据预处理模块”的时序压力减轻了， 所要求的数据处理速率仅仅为输入数据速率的1&#x2F;2。</p>
-<p>通过乒乓操作实现<strong>低速模块处理高速数据</strong> 的 <strong>实质</strong> 是：通过DPRAM 这种缓存单元实现了数据流的串并转换， 并行用“ 数据预处理模块1” 和“ 数据预处理模块2” 处理分流的数据， 是 <strong>面积与速度互换</strong>原则的体现！</p>
-</blockquote>
-<h2 id="3-门控时钟及FPGA时钟使能处理"><a href="#3-门控时钟及FPGA时钟使能处理" class="headerlink" title="3. 门控时钟及FPGA时钟使能处理"></a>3. 门控时钟及FPGA时钟使能处理</h2><h3 id="门控时钟"><a href="#门控时钟" class="headerlink" title="门控时钟"></a>门控时钟</h3><p>组合逻辑中多用门控时钟，一般驱动门控时钟的逻辑都是只包含一个门，如果有其他的附加逻辑，就容易因竞争而产生不希望的毛刺。<strong>门控时钟</strong>通过一个时能信号控制时钟的开关。<strong>当系统不工作时可以关闭时钟</strong>，整个系统处于非激活状态，这样就能够在某种程度上 <strong>降低系统功耗</strong>。</p>
-<p>使用门控时钟并不符合同步设计的思想，它可能会影响设计的实现和验证。单纯从功能上看，使用使能时钟替代门控时钟是一个不错的选择；但是<strong>使能时钟在使能信号关闭</strong>时，<strong>时钟信号仍然在工作</strong>，它无法像门控时钟那样降低系统的功耗。 </p>
-<p>解决方案：<br><img src="https://pic002.cnblogs.com/images/2011/128091/2011031715015865.jpg"><br><img src="https://pic002.cnblogs.com/images/2011/128091/2011031714550535.jpg"><br>对于上升沿有效的系统时钟clk，他的下降沿先把门控时钟打一拍，然后再用这个使能信号和系统时钟clk相与后作为后续电路的门控时钟。 </p>
-<p>样的门控时钟电路很好的解决了组合逻辑常见的一些问题。它<strong>避免了毛刺</strong>的出现，同时也有效的<strong>抑制了亚稳态</strong>可能带来的危害。但是从另一个方面来说，如果这个设计的系统时钟占空比不是很稳定，或者输出的使能信号(enable)与时钟信号(clk)的逻辑过于复杂，那么它也会带来一些功能和时序上的问题。总得来说，只要设计者控制好这个设计中时钟占空比和门控逻辑复杂度，他还是比简单的门控时钟电路方案可行。</p>
-<h3 id="门控时钟和时钟使能的理解"><a href="#门控时钟和时钟使能的理解" class="headerlink" title="门控时钟和时钟使能的理解"></a>门控时钟和时钟使能的理解</h3><p>时钟使能电路是同步设计的重要基本电路，在很多设计中，虽然内部不同模块的处理速度不同，但是由于这些时钟是同源的，可以将它们转化为单一的时钟电路处理。在FPGA的设计中，分频时钟和源时钟的skew不容易控制，难以保证分频时钟和源时钟同相。故此推荐采用使用时钟使能的方法，通过使用时钟使能可以避免时钟“满天飞”的情况，进而避免了不必要的亚稳态发生，在降低设计复杂度的同时也提高了设计的可靠性。 </p>
-<p>门控时钟 Verilog示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">input wr\_n; //写使能信号，低有效</span><br><span class="line">input cs\_n; //片选信号，低有效</span><br><span class="line">input[7:0] db; //输入数据总线</span><br><span class="line">output db\_r; //锁存输出</span><br><span class="line">reg db\_r; //输入数据寄存器</span><br><span class="line">wire d\_clk; //门控时钟信号</span><br><span class="line"></span><br><span class="line">assign d\_clk = wr\_n || cs\_n;</span><br><span class="line">always @ (posedge d\_clk) //门控时钟上升沿</span><br><span class="line">db\_r &lt;= db; //锁存输入数据</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>RTL Viewer:<br>组合逻辑中多用门控时钟，一般驱动门控时钟的逻辑都是<strong>只包含一个与门（或门）</strong>。如果有其它的附加逻辑，容易因竞争产生不希望的毛刺。 </p>
-<p>使能时钟Verilog示例代码： </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">input clk; //50MHz时钟信号</span><br><span class="line">input wr\_n; //写使能信号，低有效</span><br><span class="line">input cs\_n; //片选信号，低有效</span><br><span class="line">input[7:0] db; //数据总线</span><br><span class="line">output db\_r;</span><br><span class="line">reg db\_r; //输入数据寄存器</span><br><span class="line">wire en; //使能信号</span><br><span class="line"></span><br><span class="line">assign en = ~wr\_n &amp;&amp; ~cs\_n;</span><br><span class="line">always @ (posedge clk) //全局时钟上升沿</span><br><span class="line">if(en) //使能锁存输入</span><br><span class="line">db\_r &lt;= db; //锁存输入数据</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>RTL Viewer:<br>使能时钟这要是用于时序逻辑中，比门控时钟要来的稳定。<br>它们实现的功能上还是有一点差别的: </p>
-<blockquote>
-<p>门控时钟一例中是能够比较准确的在wr_n的上升沿锁存数据的。而使能时钟一例中在wr_n有效期间的每个时钟周期都会锁存输入数据，最后写入结束后锁存寄存器里的数据是wr_n上升前的0-T(T&#x3D;1&#x2F;clk)时间内锁存的数据。</p>
-</blockquote>
-<h2 id="4-常用集成门电路的逻辑符号对照表"><a href="#4-常用集成门电路的逻辑符号对照表" class="headerlink" title="4. 常用集成门电路的逻辑符号对照表"></a>4. 常用集成门电路的逻辑符号对照表</h2><p><img src="http://www.51hei.com/UpFiles/Pic/chip/2008-01/20080104151156176.jpg"><br><img src="http://www.51hei.com/UpFiles/Pic/chip/2008-01/20080104151156943.jpg"></p>
-<h2 id="5-ASIC设计中各个阶段的关键问题汇总"><a href="#5-ASIC设计中各个阶段的关键问题汇总" class="headerlink" title="5. ASIC设计中各个阶段的关键问题汇总"></a>5. ASIC设计中各个阶段的关键问题汇总</h2><p>ASIC的复杂性不断提高，同时工艺在不断地改进，如何在较短的时间内开发一个稳定的可重用的ASIC芯片的设计，并且一次性流片成功，这需要一个成熟的ASIC的设计方法和开发流程。本文结合NCverilog，DesignCompile，Astro等ASIC设计所用到的EDA软件，从工艺独立性、系统的稳定性、复杂性的角度对比各种ASIC的设计方法，介绍了在编码设计、综合设计、静态时序分析和时序仿真等阶段经常忽视的问题以及避免的办法，从而使得整个设计具有可控性。</p>
-<h3 id="1-基本的ASIC设计流程"><a href="#1-基本的ASIC设计流程" class="headerlink" title="1.基本的ASIC设计流程"></a>1.基本的ASIC设计流程</h3><p>ASIC设计流程可以粗分为前端设计和后端设计，如果需要更细的划分，可以分成如下几个步骤： </p>
-<p>1.包括系统结构分析设计、RTL编码以及功能验证；<br>2.逻辑综合、PreLayoutSTA以及形式验证（RTL代码与逻辑综合生成的Netlist之间）；<br>3.Floorplan、Placement、ClockTree插入以及全局布线（GlobalRouting）<br>4.形式验证（逻辑综合的Netlist与带有CT信息的Netlist之间）、STA；<br>5.DetailedRouting，DRC；<br>6.PostlayoutSTA，带有反标延迟信息的门级仿真；<br>7.Tape-Out </p>
-<p>当然，这还是一个比较粗的流程，其中每个步骤还可以分得更细，通常所说的前端设计主要包括上述流程中的1，2，4，6这几个部分。</p>
-<h3 id="2-结构分析设计、RTL编码"><a href="#2-结构分析设计、RTL编码" class="headerlink" title="2.结构分析设计、RTL编码"></a>2.结构分析设计、RTL编码</h3><p>结构分析设计阶段主要是从产品的功能定义出发，对产品采用的工艺、功耗、面积、性能以及代价进行初步的评估，从而制定相应的设计规划，对于规模很大的ASIC设计，在这一阶段估算芯片的功耗面积非常困难。<br>在这里引入一个ASIC设计中很重要的概念：<strong>划分（Partitioning）</strong>，在不同的设计阶段这个概念都将提到。首先，必须在芯片的Top-1级进行功能划分，Top-1级通常可以分为4个大的功能模块，<strong>IOPads</strong>、<strong>边界扫描逻辑</strong>、<strong>核心功能逻辑</strong>，以及<strong>PLL时钟模块</strong>，然后再对核心功能逻辑依据功能进一步细化。核心功能部分将是RTL编码设计的重点部分，下面就这一部分展开说明。</p>
-<h4 id="2-1良好的编码风格"><a href="#2-1良好的编码风格" class="headerlink" title="2.1良好的编码风格"></a>2.1良好的编码风格</h4><p>在RTL级编码时应该尽量避免采用例化标准单元门的方式编码；</p>
-<p>由于没有对所有的条件分支赋值引起潜在的Latch问题、always块中的敏感列表问题，以及阻塞赋值与非阻塞赋值的选择问题； </p>
-<p>在定义时序块时，有些信号是需要复位的，有些不需要复位，如果编码时把它们写在一个always块中，综合出来的电路就不是我们设想的。对于那些不需要复位的信号，综合后可能把复位信号连到对应的触发器使能端，这样导致RTL代码和Netlist的行为不一致，而这类问题在形式验证时也没法发现，需要通过大量的门级仿真才可能发现。</p>
-<p>ASIC设计应该尽量<strong>避免采用Latch作为时序单元</strong>，Latch设计潜在的问题，如：</p>
-<blockquote>
-<p>如果使能输入端有Glitch，就会导致锁存噪声数据。<br>或者你能够保证数据稳定时间可以包住使能信号，可你很难保证在使能关闭的瞬间D输入端没有Glitch，尤其在接收总线数据的时候。<br>同时，Latch设计还带来STA和DFT的困难，而采用触发器的设计，通过Setup&#x2F;Hold时间的检查报出这些问题。<br>因此，尽管Latch设计有面积、低功耗等方面的优势，由于这些潜在的风险使得设计变得不可控，因此不推荐使用。</p>
-</blockquote>
-<p>尽量避免把时钟当作信号使用，在RTL验证时不会出现什么问题，但是，如果在后端设计的时候忽略了对这些点的时钟skew控制，就会产生意想不到的结果。</p>
-<p>例1：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module　　gen\_clk(cka,rst\_n,ckb);</span><br><span class="line">    input　　 cka,rst\_n;</span><br><span class="line">    output　　ckb;</span><br><span class="line">    reg[1:0] ck\_cnt;</span><br><span class="line"></span><br><span class="line">    always@(posedgecka)begin</span><br><span class="line">        if(!rst\_n)　　ck\_cnt</span><br><span class="line">        else　　　　ck\_cnt</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    assign　　　ckb=ck\_cnt;</span><br><span class="line"></span><br><span class="line">endmodule</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2同步设计和跨时钟域数据传输"><a href="#2-2同步设计和跨时钟域数据传输" class="headerlink" title="2.2同步设计和跨时钟域数据传输"></a>2.2同步设计和跨时钟域数据传输</h4><p>尽管异步系统有很多优势，如低功耗，也没有同步系统中让工程师头疼的时钟分布以及skew问题，但是其复杂的各种握手协议，以及异步电路在测试上的困难，使得同步系统还是数字电路设计的首选。同步设计的一个特点就是所有的时序单元都是对统一的时钟边沿敏感。要使整个芯片只采用一个时钟并不现实，因此，异步时钟域之间的数据传输以及其中的一些问题将是本节讨论的重点。 </p>
-<p>通常，为了能够更好的综合和STA，需要对设计进行划分，一般的原则是将异步时钟域之间有数据交换的部分独立出来单独处理，其他的模块都在单一的同步时钟域中工作。 </p>
-<p>异步时钟之间的<strong>亚稳态（Metastability）问题</strong>，亚稳态主要是由于被采样数据的变化十分靠近采样时钟的边沿引起的，这样接收（采样）触发器的输出就是亚稳态，并在传输过程中发散而引发逻辑错误，也就是通常所说的同步失败。异步接收设计中通过两级Flipflop来消除这种可能出现的亚稳态。 </p>
-<p>在同步时钟域中的这种问题是Hold问题，可以通过EDA工具或插入buffer消除，因为EDA工具可以检测到这种问题。 </p>
-<p>多位接收控制信号之间的skew引起的问题如图1，如果其中一位如C2延迟大于C1，Ck采样的数据就变成了C2&#x3D;1，C1&#x3D;0，如果按照无skew传输的波形是C2’的样子，应该是00才对。而skew是不可避免的，可能是由于C2C1信号的Launch时钟本身的skew引起，也可能是传输延迟引起。<br><img src="https://img-blog.csdn.net/20160715102051814"><br>对于简单的情况，我们可以通过简化逻辑，尽量让控制信号是1位宽。而这样的问题同样出现在多位宽的数据接收情况。这时通常推荐使用异步FIFO接收，或者通过握手协议接收。有的系统设计数据交换协议约定，异步接收过程中，当某个事件发生后（如图1中采样到V信号为1后）的1个Cycle后（也可以约定多个Cycle）数据肯定是正确的；也可以消除这种skew问题，但是，这种实现需要后端设计时保证这些相关信号的skew不会超过约定的周期，同时发送方的数据也要保持足够的周期数。如图1中C2”信号，如果skew2＞Period（一个CKCycle），则收到V信号一个Cycle后采样数据还是错误的。 </p>
-<h4 id="2-3复位策略"><a href="#2-3复位策略" class="headerlink" title="2.3复位策略"></a>2.3复位策略</h4><p>复位信号中最主要的问题是Removal，也就是要保证所有的触发器必须在同一节拍内离开Reset状态，另外，Reset信号完成的时刻不能与时钟边沿太靠近，以防止触发器进入亚稳态（Metastability）。步复位和异步复位各有利弊，很难说哪种更有优势。 </p>
-<p>同步复位有一个好处：</p>
-<blockquote>
-<p>复位的时刻发生在时钟的边沿，这样可以防止复位信号的Glitch </p>
-<p>如果是内部生产的Reset信号，就必须保证Reset脉冲有足够的宽，至少2个Cycles，能够让时钟采样到。同时，这也是它的缺点，因为它需要一个活动的时钟，在加电时无法对一些电路产生复位。另外，综合可能把同步复位的逻辑移到触发器的D输入端，作为普通的信号处理，由于Reset信号通常有传输负载和延迟，这样处理会导致DataPath上较长的延迟。 </p>
-</blockquote>
-<p>异步复位:</p>
-<blockquote>
-<p>不需要活动的时钟，对于一些需要加电复位的电路，如总线，是很必要的<br>不像同步复位那样，复位信号会被用作D端的输入逻辑，使得整个DataPath非常干净。<br>如果异步复位有Glitch可能使芯片进入复位状态，这时可以通过两级DFF接收Reset，再通过tree给复位触发器使用，这样可以消除输入引起的Glitch，如果设计中有多个时钟域，可以对每个时钟分配两个DFF接收Reset信号。 </p>
-</blockquote>
-<h4 id="2-4门控时钟"><a href="#2-4门控时钟" class="headerlink" title="2.4门控时钟"></a>2.4门控时钟</h4><p>GatedClock主要的优点在于能够降低功耗面积，也可以简化逻辑从而提高频率。在编码时需要考虑无Glitch的门控信号设计。同时，在DFT设计时，由于触发器的时钟是前一级逻辑的输出（其他派生时钟也有同样的问题），为了测试这类触发器，需要为时钟增加一级Mux，在正常工作模式下，采用派生时钟，在扫描测试时采用正常的时钟。 </p>
-<h4 id="2-5总线实现"><a href="#2-5总线实现" class="headerlink" title="2.5总线实现"></a>2.5总线实现</h4><p>在这里只讨论总线实现的方式，不涉及总线的协议。在设计总线时将面临着两种基本方式的选择，是采用三态总线还是采用多路选择结构的总线。在全定制设计时，设计者似乎更喜欢采用三态，挂在总线上的各个部件可以分布在芯片的各个部分。同时，由于可以减少连线的数量，它必须保证在任何时候，不发生总线冲突，如果多个驱动总线可能导致严重的错误，需要通过一些措施消除这种隐患，比如三态的使能通过解码器产生Onehot的编码，防止多驱动引起的逻辑错误和对芯片的损害；同时，三态总线需要连到上拉电阻上，以防止在一段时间内不驱动总线产生总线数据不确定，而DC等综合并不支持。 </p>
-<p>另外，三态总线的电容负载也是一个不可忽视的问题，对性能和面积造成不利的影响，其负载主要来自总线连接的多个电路单元，总线布局本身带来一定的负载；最后，三态总线给DFT设计也带来困难。 </p>
-<p>基于这些理由，在非定制ASIC设计时，我们实在不必要选择三态总线的方式。相比之下，采用多路选择器的问题是较多连线带来的布线拥塞问题，选择器的延迟问题基本上不是什么问题，深亚微米设计中，门的延迟差别已经变少，同时多层金属也带来了足够的布线资源。</p>
-<h3 id="3-逻辑综合以及后端设计相关问题"><a href="#3-逻辑综合以及后端设计相关问题" class="headerlink" title="3.逻辑综合以及后端设计相关问题"></a>3.逻辑综合以及后端设计相关问题</h3><h4 id="3-1编码风格检查"><a href="#3-1编码风格检查" class="headerlink" title="3.1编码风格检查"></a>3.1编码风格检查</h4><p>DC对编码风格的检查提供良好的支持，在进行逻辑综合之前最好先<strong>分析一下DC的log文件</strong>，看是否有上述的或其他的一些编码风格问题。通过set_dont_use命令可以<strong>禁止使用一些工艺相关的单元</strong>，all_registers带参数也可以报告出设计中所用到的Latch。下面主要讨论前面提到的一些情况在综合以及后端实现时的特殊处理。同时，还有很多EDA工具提供编码风格进行检查。</p>
-<p>####3.2异步时钟域 ####<br>在编码设计中我们通过划分，将异步时钟域接收模块分离成独立的模块，其他模块都采用单独的时钟，综合约束相对简单。对于那些带有异步时钟域的模块，如果不进行约束，DC总是试图去满足采样时钟的setup&#x2F;hold时间，事实上，设计者并不关心异步时钟域之间的这些问题，而其Metastability问题在编码阶段已经解决。通常，可以设置异步时钟域之间的Path为false_path。如： </p>
-<blockquote>
-<p>set_false_path-from[get_clocksCLKB]-to[get_clocksCLKA] </p>
-</blockquote>
-<p>如果异步接口数据的控制按照最后一种方式（也就是在约定的节拍内读取数据），也就需要发送方的数据skew控制在一定范围内。由于没有对这些路径进行约束（虽然可以设置这些path的Maxdelay，但是这种约束对于skew的控制并不能取得好的效果），工具无法对这些路径进行自动优化。因此最好采用手工布局的方法，让这些skew在一个可控的范围内，<strong>在STA阶段，也需要对这些skew进行单独的分析</strong>。 </p>
-<h4 id="3-3特殊时钟信号处理"><a href="#3-3特殊时钟信号处理" class="headerlink" title="3.3特殊时钟信号处理"></a>3.3特殊时钟信号处理</h4><p>门控时钟像所有的内部时钟一样，<strong>时钟的skew可能引起一些保持时间问题</strong>，默认条件下，时钟树综合工具并不把逻辑门相连的时钟信号连到时钟树上，非门控的触发器上的时钟是连在时钟树上，这个时钟延迟是相当可观的，<strong>为了控制门控时钟与非门控时钟的skew，通常从时钟树叶子节点的上一级引出时钟信号作为控制门的时钟输入</strong>。在STA阶段需要对门控时钟的Setup&#x2F;Hold时间进行特殊分析,以及Glitch检查。<br><img src="https://img-blog.csdn.net/20160715102055361"><br><img src="https://img-blog.csdn.net/20160715102058205"> </p>
-<p>为了方便讨论，时钟树插入以后，假设A与B之间有1个ckaCycle的skew；从图3可以看到如果采用A点作加法器的输入时产生的波形是ckb’，采用B点作为输入时的波形是ckb，显然，从例1的代码来看，ckb才是正确的。因此必须注意到，如果时钟当作普通的信号使用时可能带来的问题，这类问题并没有一个通用的解决办法。在这个例子中，不采用时钟树上的信号才是正确的，但是在另外一些应用中，就必须采用时钟树上的信号。比如，时钟是CK的两个触发器中锁存的数据再由CK的高电平和低电平选择输出，那么，这个时候就需要作为选择信号的CK从时钟树上拉过来。因此，如果设计中用到了时钟信号作为普通信号的情况，在后端设计时就必须特殊处理。</p>
-<p>如果设计中用到时钟的上升沿和下降沿，在时钟树插入的时候也需要注意采用能够平衡上升沿和下降沿的buffer，以保证较好的占空比。 </p>
-<h4 id="3-4复位信号"><a href="#3-4复位信号" class="headerlink" title="3.4复位信号"></a>3.4复位信号</h4><p>复位中的Removal问题，对于异步复位信号，需要tree来平衡各个负载点上的skew，但是，Reset信号的skew控制不像时钟那么严格，只要满足Removal检查就可以，PT等STA工具支持Removal的检查。 </p>
-<h3 id="4-带Post-Layout延迟信息的门级仿真"><a href="#4-带Post-Layout延迟信息的门级仿真" class="headerlink" title="4.带Post-Layout延迟信息的门级仿真"></a>4.带Post-Layout延迟信息的门级仿真</h3><p>门级仿真非常重要，它是最后一道关卡，可以从两个方面入手，<strong>功能性验证</strong>和<strong>时序验证</strong>。<br>最主要的是时序验证，功能性验证基本上由RTL级已经做了很多充分的工作，如果等价性验证通过，功能性基本没问题. </p>
-<p>时序仿真需要了解到一些仿真工具所采用的延迟模型，仿真工具的延迟计算都是基于一种简单延迟模型： </p>
-<blockquote>
-<p>CircuitDelay&#x3D;TransportDelayInertialDelay</p>
-</blockquote>
-<p>时序仿真的<strong>目标</strong>是通过反标SDF文件中延迟信息，<strong>模拟一些在RTL级无法出现的一些情况</strong>，如复位，状态机的翻转。充分的验证应该包括在<strong>bestcase下检查短路径的hold时间</strong>，在<strong>worstcase下检查长路径的setup时间</strong>。这些问题虽然在STA也作了检查，门级仿真还是很必要的，尤其在用到时钟双边沿的设计中；另外，对于有异步时钟接口的设计，需要<strong>调整异步时钟的相位</strong>关系，检查<strong>是否存在着同步失败</strong>问题；3.3中特殊时钟问题，都可以通过门仿验证其正确性；一些窄脉冲是否能通过IOBuffer。总之，这是一个非常重要的过程，需要花大量的时间去分析一些关键信号的波形与设想的是否一致。</p>
-<h3 id="5-典型ASIC设计流程"><a href="#5-典型ASIC设计流程" class="headerlink" title="5. 典型ASIC设计流程"></a>5. 典型ASIC设计流程</h3><ol>
-<li>、结构及电气规定。<br>2）、RTL级 典型ASIC设计具有下列相当复杂的流程：<blockquote>
-<pre><code>1. 、结构及电气规定。  
-2）、RTL级代码设计和仿真测试平台文件预备。  
-3）、为具有存储单元的模块插进BIST(Design For test 设计)。  
-4）、为了验证设计功能,进行完全设计的动态仿真。  
-5）、设计环境设置。包括使用的设计库和其他一些环境变量。  
-6）、使用 Design Compiler工具,约束和综合设计,并且加进扫描链（或者JTAG）。  
-7）、使用 Design Compiler自带静态时序分析器,进行模块级静态时序分析。  
-8）、使用 Formality工具,进行 RTL级和综合后门级网表的 Formal VerificatiON。  
-9）、版图布局布线之前,使用PrimeTime工具进行整个设计的静态时序分析。  
-10）、将时序约束前标注到版图天生工具。  
-11）、时序驱动的单元布局,时钟树插进和全局布线。  
-12）、将时钟树插进到DC的原始设计中。  
-13）、使用 Formality,对综合后网表和插进时钟树网表进行 Formal Verification。  
-14）、从全局布线后的版图中提取出估算的时间延时信息。  
-15）、将估算的时间延时信息反标注到Design Compiler或者 Primetime。  
-16）、在Primetime中进行静态时序分析。  
-17）、在Design Compiler中进行设计优化。  
-18）、设计的具体布线。  
-19）、从具体布线的设计中提取出实际时间延时信息。  
-20）、将提取出的实际时间延时信息反标注到Design Compiler或者Primetime中。  
-21）、使用Primetime进行版图后的静态时序分析。  
-22）、在 Design Compiler中进行设计优化（假如需要）。  
-23）、进行版图后带时间信息的门级仿真。  
-24）、 LVS和DRC验证,然后流片。设计和仿真测试平台文件预备。
-</code></pre>
-</blockquote>
-</li>
-</ol>
-<p>3）、为具有存储单元的模块插进BIST(Design For test 设计)。<br>4）、为了验证设计功能,进行完全设计的动态仿真。<br>5）、设计环境设置。包括使用的设计库和其他一些环境变量。<br>6）、使用 Design Compiler工具,约束和综合设计,并且加进扫描链（或者JTAG）。<br>7）、使用 Design Compiler自带静态时序分析器,进行模块级静态时序分析。<br>8）、使用 Formality工具,进行 RTL级和综合后门级网表的 Formal Verification。<br>9）、版图布局布线之前,使用PrimeTime工具进行整个设计的静态时序分析。<br>10）、将时序约束前标注到版图天生工具。<br>11）、时序驱动的单元布局,时钟树插进和全局布线。<br>12）、将时钟树插进到DC的原始设计中<br>13）、使用 Formality,对综合后网表和插进时钟树网表进行 Formal Verification。<br>14）、从全局布线后的版图中提取出估算的时间延时信息。<br>15）、将估算的时间延时信息反标注到Design Compiler或者 Primetime。<br>16）、在Primetime中进行静态时序分析。<br>17）、在Design Compiler中进行设计优化。<br>18）、设计的具体布线。<br>19）、从具体布线的设计中提取出实际时间延时信息。<br>20）、将提取出的实际时间延时信息反标注到Design Compiler或者Primetime中。<br>21）、使用Primetime进行版图后的静态时序分析。<br>22）、在 Design Compiler中进行设计优化（假如需要）。<br>23）、进行版图后带时间信息的门级仿真。<br>24）、 LVS和DRC验证,然后流片。</p>
-<h2 id="6-数字IC设计流程"><a href="#6-数字IC设计流程" class="headerlink" title="6. 数字IC设计流程"></a>6. 数字IC设计流程</h2><h3 id="1-大体流程"><a href="#1-大体流程" class="headerlink" title="1.大体流程"></a>1.大体流程</h3><p>1.确定项目需求 </p>
-<blockquote>
-<p>指定芯片指标 </p>
-<p>具体指标有<br>物理指标：制作工艺，裸片面积，封装<br>性能指标：速度，功耗<br>功能指标：功能描述，接口定义 </p>
-</blockquote>
-<p>2.系统级设计 </p>
-<blockquote>
-<p>用系统建模语言对各个模块进行描述 </p>
-</blockquote>
-<p>3.前端设计 </p>
-<blockquote>
-<p>RTL设计，RTL仿真，硬件原型验证，电路综合 </p>
-</blockquote>
-<p>4.后端设计 </p>
-<blockquote>
-<p>版图设计，物理严重，后仿真等 </p>
-</blockquote>
-<h3 id="2-前端设计与后端设计"><a href="#2-前端设计与后端设计" class="headerlink" title="2. 前端设计与后端设计"></a>2. 前端设计与后端设计</h3><p>数字前端设计：</p>
-<blockquote>
-<p>以生成可以布局布线的Netlist为重点；</p>
-</blockquote>
-<p>数字后端设计：</p>
-<blockquote>
-<p>以生成可以送交foundry进行流片的GDS2文件为重点</p>
-</blockquote>
-<p>数字IC设计流程</p>
-<blockquote>
-<p><img src="https://img-blog.csdn.net/20160715113331799"></p>
-</blockquote>
-<p><img src="https://img-blog.csdn.net/20160715120952346"><br><img src="https://img-blog.csdn.net/20160715113336158"><br><img src="https://img-blog.csdn.net/20160715113346205"><br><img src="https://img-blog.csdn.net/20160715113349424"><br><img src="https://img-blog.csdn.net/20160715113354549"><br><img src="https://img-blog.csdn.net/20160715113357346"><br><img src="https://img-blog.csdn.net/20160715113400768"><br><img src="https://img-blog.csdn.net/20160715120828299"><br><img src="https://img-blog.csdn.net/20160715120832893"><br><img src="https://img-blog.csdn.net/20160715120835814"><br><img src="https://img-blog.csdn.net/20160715120839470"><br><img src="https://img-blog.csdn.net/20160715120842722"><br><img src="https://img-blog.csdn.net/20160715120845783"><br><img src="https://img-blog.csdn.net/20160715120854939"><br><img src="https://img-blog.csdn.net/20160715120859472"><br><img src="https://img-blog.csdn.net/20160715120903580"><br><img src="https://img-blog.csdn.net/20160715120906128"><br><img src="https://img-blog.csdn.net/20160715120909142"><br> <img src="https://img-blog.csdn.net/20160715120912269"><br><img src="https://img-blog.csdn.net/20160715120915346"><br><img src="https://img-blog.csdn.net/20160715120918082"><br><img src="https://img-blog.csdn.net/20160715120921377"><br><img src="https://img-blog.csdn.net/20160715120924207"><br><img src="https://img-blog.csdn.net/20160715120926846"><br><img src="https://img-blog.csdn.net/20160715120929144"><br><img src="https://img-blog.csdn.net/20160715120932127"><br><img src="https://img-blog.csdn.net/20160715120934879"><br><img src="https://img-blog.csdn.net/20160715120938830"><br><img src="https://img-blog.csdn.net/20160715120941770"><br><img src="https://img-blog.csdn.net/20160715120945533"><br><img src="https://img-blog.csdn.net/20160715120949114"></p>
-<h2 id="FIFO深度计算"><a href="#FIFO深度计算" class="headerlink" title="FIFO深度计算"></a>FIFO深度计算</h2><p>首先，一定要理解清楚FIFO的应用场景，这个会直接关系到FIFO深度的计算。 </p>
-<p>其次，异步FIFO，读写时钟不同频，那么FIFO主要用于数据缓存，我们选择的FIFO深度应该能够保证在最极端的情况下，仍然不会溢出。因此考虑的前提一般都是写时钟频率大于读时钟频率，但是若写操作是连续的数据流，那么再大的FIFO都无法保证数据不溢出。因此可以认为这种情况下写数据的传输是“突发Burst”的，即写操作并不连续，设计者需要根据满标志控制或者自己来控制写操作的起止。 </p>
-<p>宏观地，从整个时间域上看，”写数据&#x3D;读数据”，这个条件必须要满足，如果这个大条件不满足的话，用FIFO是没有效果的。但是在发送方”突发”发送数据的时间T内，是很有可能写数据&gt;读数据的，因此FIFO的深度要能够保证，在这段时间T内，如果接收方未能将发送方发送的数据接收完毕的话，剩下的数据都是可以存储在FIFO内部而且不会溢出的，那么在发送方停止发送数据的”空闲时隙”内，接收方可以从容地接收剩下来的数据。 </p>
-<p>例子：一个8bit宽的AFIFO，输入时钟为100MHz，输出时钟为95MHz，设一个package为4Kbit，且两个package之间的发送间距足够大。问AFIFO的深度。 </p>
-<blockquote>
-<p>解释：一个异步FIFO，读写频率不同，读写位宽相同。发送发一次Burst突发的数据量为4Kbit，即500Word，在两次Burst突发之间有足够的时间，因此我们只用考虑在发送方Burst发送数据的时间T内，如果接受方没法将数据全部接受，其余数据均可存在FIFO内且不溢出，那么在发送方停止Burst发送数据的时间段内，接收方就可以从容的从FIFO内读取数据。首先发送方Burst发送数据的时间段为 T &#x3D; 500&#x2F;100MHz，发送的数据量为 B_send &#x3D; 500word，而在T这段时间内，接收方能够接受的数据量为B_rec &#x3D; T*95MHz &#x3D; 500 * 95 &#x2F; 100 word &#x3D; 475word，因此 B_remain &#x3D; B_send - B_rec &#x3D; 500 - 475 &#x3D; 25 。那么FIFO的深度至少要大于等于25才行。</p>
-</blockquote>
-<p>例子：写时钟频率w_clk,<br>读时钟频率r_clk, 写时钟周期里，每B个时钟周期会有A个数据写入FIFO；读时钟周期里，每Y个时钟周期会有X个数据读出FIFO；则，FIFO的最小深度是？</p>
-<blockquote>
-<p>解释：首先，我们可以认为写操作是Burst突发的。其次，写操作的效率并不是100%的，而是A&#x2F;B的，因此我们可以认为实际的F_wr &#x3D; (A&#x2F;B) * w_clk，同理，实际中F_rd &#x3D; (X&#x2F;Y)*r_clk。</p>
-<p>另外，和第一个例子不同的是，这个题目里面并没有约束Burst突发的场景，在正常情况下，应该是这样的 </p>
-<p><em>空闲—Burst突发—空闲—Burst突发—空闲—Burst突发</em> </p>
-<p>但是我们在计算中，需要考虑最极端的情况，即 </p>
-<p><em>空闲—Burst突发—Burst突发—空闲—Burst突发—空闲</em> </p>
-<p>即传输过程中，可能会出现”背靠背”的情况，那么我们设计的FIFO深度必须能够保正，在”背靠背”的时间段内，如果接收方没法接受所有数据，那么剩余的数据可以被存储在FIFO内部且不会溢出。 </p>
-<p>假设”背靠背”时发送的数据 &#x3D; BL，那么”背靠背”的时间 &#x3D; BL &#x2F; w_clk ，注意，这段时间内F_wr &#x3D; w_clk 而不是之前提到的(A&#x2F;B) * w_clk。在这段时间内， </p>
-<p>接收方可以接受的数据 &#x3D; (BL&#x2F;w_clk) * (X&#x2F;Y) * r_clk， </p>
-<p>剩下的数据量 &#x3D; BL - ( BL &#x2F; w_clk ) * (X&#x2F;Y)*r_clk， </p>
-<p>那么FIFO的深度至少就要为<br><strong>depth &#x3D; BL - ( BL &#x2F; w_clk ) * (X&#x2F;Y) * r_clk</strong></p>
-</blockquote>
-<h3 id="FIFO深度计算-1"><a href="#FIFO深度计算-1" class="headerlink" title="FIFO深度计算"></a>FIFO深度计算</h3><p>数据流连续不断则FIFO深度无论多少，只要读写时钟不同源同频则都会丢数。</p>
-<p>FIFO用于缓冲块数据流，一般用在写快读慢时。</p>
-<blockquote>
-<p>FIFO深度&#x2F;（写入速率 - 读出速率） &#x3D; FIFO被填满时间<br>大于<br>数据包传送时间&#x3D; 数据量 &#x2F; 写入速率 </p>
-</blockquote>
-<p>例子：A&#x2F;D采样率50MHz,dsp读A&#x2F;D读的速率40MHz,要不丢失地将10万个采样数据送入DSP,在A&#x2F;D在和DSP之间至少加多大容量（深度）的FIFO才行？<br>分析：</p>
-<blockquote>
-<p>100,000&#x2F;50M&#x3D;0.002s<br>0.002*(50M-40M)&#x3D;20k</p>
-</blockquote>
-<p>异步FIFO设计注意事项:</p>
-<blockquote>
-<p>设计的时候需要考虑跨时钟域处理带来的问题；<br>1、FIFO的设计必须解决empty和full控制问题；<br>2、异步FIFO可以考虑把写Addr在写时钟域转换成gray码，然后通过读时钟来寄存器，转换到读时钟域中，解决empty标记信号；<br>3、异步FIFO可以考虑把读Addr在读时钟域转换成gray码，然后通过写时钟来寄存器，转换到写时钟域中，解决full标记信号；<br>4、使用gray码的原因在gray码可以把Addr值连续变化的规例（但是Addr的会有多个bit跳变）转换成gray码中只有1个bit跳变，这样在跨时钟域传输中不会出现异步采取出现很大差异（异步时钟采样会出现亚稳态现象），最多是原始Addr值加1或者减1，这样不会使得FIFO状态出现错误；</p>
-</blockquote>
-<p>当fifo的尺寸很大时候。用gray code 变得不太合算。因为要从binary变成gray，再变回来。这个时候，要用异步handshake来把地址转到另一个<br>时钟域里面。简单的说用 request 和 ack。 </p>
-<h3 id="计算FIFO深度"><a href="#计算FIFO深度" class="headerlink" title="计算FIFO深度"></a>计算FIFO深度</h3><p>FIFO在系统中用来作缓冲或者队列，通常情况下，当读速率比写速率慢的时候，需要采用FIFO。</p>
-<p>FIFO的深度取决于需要缓冲的数据量，缓冲的数据量取决于写速率和读速率。 </p>
-<p>系统中数据率的变化主要依赖于系统的负载。所以，为了得到安全的FIFO，在设计时，我们需要考虑最坏情形下的通过FIFO进行的数据传输。 </p>
-<p>最坏情况下，读写数据间的速率差，应该为最大值。也就是说，写操作速率应该取最大的写速率，而读操作应该取选小的读速率。 </p>
-<p>读操作的数据速率是由空闲周期决定的，而对于写操作，最大的写数据率，应该不考虑空闲周期。 </p>
-<p>因而，对于读操作，我们有 Data rate &#x3D; Number of data * rate of clock。写方是数据流入的方，而读方是数据露出方。读方的速率取决于写方的速率和自身的读速率(Frd&#x2F;Idle_cycle_rd.) </p>
-<p>为了获知写方数据速率，我们需要知道在突发模式下的数据量，我们假设其为B. </p>
-<p><strong>Fifo size &#x3D; Size to be buffered &#x3D; B - B * Frd &#x2F; (Fwr * Idle_cycle _rd )</strong></p>
-<p>这里，我们没有考虑由于异步读写需要同步，所引入的延时。越大的延时，需要越大的FIFO来缓冲更多和写数据。</p>
-<p>例子：  </p>
-<p>Writing clock 30MHz - F1 　　 写时钟<br>Reading clock 40MHz - F2 　读时钟<br>Writing Burst Size - B 　　　　突发数据量　<br>Case 1 : There is 1 idle clock cycle for reading side - I 　读方一个空闲周期　<br>Case 2 : There is 10 idle clock cycle for reading side - I 　读方10个空闲周期 　</p>
-<p>FIFO depth calculation &#x3D; B - B * F2&#x2F;(F1*I) </p>
-<p>FIFO depth calculation &#x3D; B - B * F2&#x2F;(F1*2) </p>
-<p>In our present problem FIFO depth &#x3D; B - B * 40&#x2F;(30*2) &#x3D; B(1-2&#x2F;3)&#x3D; B&#x2F;3 </p>
-<p>That means if our Burst amount of data is 10 , FIFODEPTH &#x3D; 10&#x2F;3 &#x3D; 3.333 &#x3D; 4 (approximatly) </p>
-<p>If B &#x3D; 20 FIFO depth &#x3D; 20&#x2F;3 &#x3D; 6.6 &#x3D; 7or 8 (clocks are asynchronous)</p>
-<p>If B &#x3D; 30 FIFO depth &#x3D; 30&#x2F;3 &#x3D; 10 10+1 &#x3D; 11 (clocks are asynchronous)</p>
-<p>If 10 IDLE cycles betweeen two read cycles .</p>
-<p>FIFO DEPTH &#x3D; B - B <em>F2&#x2F;(F1</em>10) .&#x3D; B(1-4&#x2F;30)&#x3D; B * 26 &#x2F;30  </p>
-<h2 id="异步FIFO的FPGA实现"><a href="#异步FIFO的FPGA实现" class="headerlink" title="异步FIFO的FPGA实现"></a>异步FIFO的FPGA实现</h2><p>FIFO是英文First In First Out 的缩写，是一种先进先出的数据缓存器，它与普通存储器的区别是没有外部读写地址线，这样使用起来非常简单，但缺点就是只能顺序写入数据，顺序的读出数据，其数据地址由内部读写指针自动加1完成，不能像普通存储器那样可以由地址线决定读取或写入某个指定的地址。</p>
-<p>用途1： </p>
-<blockquote>
-<p>异步FIFO读写分别采用相互异步的不同时钟。在现代集成电路芯片中，随着设计规模的不断扩大，一个系统中往往含有数个时钟，多时钟域带来的一个问题就是，如何设计异步时钟之间的接口电路。异步FIFO是这个问题的一种简便、快捷的解决方案，使用异步FIFO可以在两个不同时钟系统之间快速而方便地传输实时数据。 </p>
-</blockquote>
-<p>用途2： </p>
-<blockquote>
-<p>对于不同宽度的数据接口也可以用FIFO，例如单片机位8位数据输出，而DSP可能是16位数据输入，在单片机与DSP连接时就可以使用FIFO来达到数据匹配的目的。 </p>
-</blockquote>
-<h3 id="FIFO的常见参数"><a href="#FIFO的常见参数" class="headerlink" title="FIFO的常见参数"></a>FIFO的常见参数</h3><ul>
-<li>FIFO的宽度：即FIFO一次读写操作的数据位；</li>
-<li>FIFO的深度：指的是FIFO可以存储多少个N位的数据（如果宽度为N）。</li>
-<li>满标志：FIFO已满或将要满时由FIFO的状态电路送出的一个信号，以阻止FIFO的写操作继续向FIFO中写数据而造成溢出（overflow）。</li>
-<li>空标志：FIFO已空或将要空时由FIFO的状态电路送出的一个信号，以阻止FIFO的读操作继续从FIFO中读出数据而造成无效数据的读出（underflow）。</li>
-<li>读时钟：读操作所遵循的时钟，在每个时钟沿来临时读数据。</li>
-<li>写时钟：写操作所遵循的时钟，在每个时钟沿来临时写数据。</li>
-</ul>
-<hr>
-<h3 id="读写指针的工作原理"><a href="#读写指针的工作原理" class="headerlink" title="读写指针的工作原理"></a>读写指针的工作原理</h3><p>写指针：总是指向下一个将要被写入的单元，复位时，指向第1个单元(编号为0)</p>
-<p>读指针：总是指向当前要被读出的数据，复位时，指向第1个单元(编号为0) </p>
-<h3 id="FIFO的“空”-“满”检测"><a href="#FIFO的“空”-“满”检测" class="headerlink" title="FIFO的“空”&#x2F;“满”检测"></a>FIFO的“空”&#x2F;“满”检测</h3><p><strong>FIFO设计的关键：产生可靠的FIFO读写指针和生成FIFO“空”&#x2F;“满”状态标志。</strong></p>
-<p>当读写指针相等时，表明FIFO为空，这种情况发生在复位操作时，或者当读指针读出FIFO中最后一个字后，追赶上了写指针时，如下图所示：<br><img src="http://images.cnitblog.com/blog/470909/201304/09122539-f66a4eee9b0341c9ab4e18f4ad6e782c.jpg"></p>
-<p>当读写指针再次相等时，表明FIFO为满，这种情况发生在，当写指针转了一圈，折回来(wrapped around)又追上了读指针，如下图：<br><img src="http://images.cnitblog.com/blog/470909/201304/09122758-65cac4b3445f476b9b25338b88fe0595.jpg"> </p>
-<p>为了区分到底是满状态还是空状态，可以采用以下方法：</p>
-<p>方法1： </p>
-<blockquote>
-<p>在指针中添加一个额外的位(extra bit)，当写指针增加并越过最后一个FIFO地址时，就将写指针这个未用的MSB加1，其它位回零。对读指针也进行同样的操作。此时，对于深度为2n的FIFO，需要的读&#x2F;写指针位宽为(n+1)位，如对于深度为8的FIFO，需要采用4bit的计数器，0000～1000、1001～1111，MSB作为折回标志位，而低3位作为地址指针。</p>
-<p>如果两个指针的MSB不同，说明写指针比读指针多折回了一次；如r_addr&#x3D;0000,而w_addr &#x3D; 1000,为满。<br>如果两个指针的MSB相同，则说明两个指针折回的次数相等。其余位相等，说明FIFO为空；</p>
-</blockquote>
-<h3 id="二进制FIFO指针的考虑"><a href="#二进制FIFO指针的考虑" class="headerlink" title="二进制FIFO指针的考虑"></a>二进制FIFO指针的考虑</h3><p>将一个二进制的计数值从一个时钟域同步到另一个时钟域的时候很容易出现问题，因为采用二进制计数器时所有位都可能同时变化，在同一个时钟沿同步多个信号的变化会产生亚稳态问题。而使用格雷码只有一位变化，因此在两个时钟域间同步多个位不会产生问题。所以需要一个二进制到gray码的转换电路，将地址值转换为相应的gray码，然后将该gray码同步到另一个时钟域进行对比，作为空满状态的检测。<br><img src="http://images.cnitblog.com/blog/470909/201304/09142332-2dd055f668444f998685034a733f72cc.jpg"></p>
-<h3 id="使用gray码进行对比，如何判断“空”与“满”"><a href="#使用gray码进行对比，如何判断“空”与“满”" class="headerlink" title="使用gray码进行对比，如何判断“空”与“满”"></a>使用gray码进行对比，如何判断“空”与“满”</h3><p>对于“空”的判断依然依据二者完全相等(包括MSB)</p>
-<p>而对于“满”的判断，如下图，由于gray码除了MSB外，具有镜像对称的特点，当读指针指向7，写指针指向8时，除了MSB，其余位皆相同，不能说它为满。因此不能单纯的只检测最高位了，在gray码上判断为满必须同时满足以下3条：</p>
-<ul>
-<li>wptr和同步过来的rptr的MSB不相等，因为wptr必须比rptr多折回一次。</li>
-<li>wptr与rptr的次高位不相等，如上图位置7和位置15，转化为二进制对应的是0111和1111，MSB不同说明多折回一次，111相同代表同一位置。</li>
-<li>剩下的其余位完全相等。<br><img src="http://images.cnitblog.com/blog/470909/201304/09142452-504d231d43c942b5bf3e311138264c04.jpg"></li>
-</ul>
-<h3 id="总体实现"><a href="#总体实现" class="headerlink" title="总体实现"></a>总体实现</h3><p><img src="http://images.cnitblog.com/blog/470909/201304/09142554-b1cc1fcef63e460e9c0186beebbc53ef.jpg"></p>
-<p>具体代码见原文：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Times_poem/article/details/51919709">https://blog.csdn.net/Times_poem/article/details/51919709</a></p>
-<h2 id="Verilog的综合与不可综合"><a href="#Verilog的综合与不可综合" class="headerlink" title="Verilog的综合与不可综合"></a>Verilog的综合与不可综合</h2><p>所有综合工具都支持的结构：always，assign，begin，end，case，wire，tri，aupply0，supply1，reg，integer，default，for，function，and，nand，or，nor，xor，xnor，buf，not，bufif0，bufif1，notif0，notif1，if，inout，input，instantitation，module，negedge，posedge，operators，output，parameter。</p>
-<p>所有综合工具都不支持的结构：time，defparam，$finish，fork，join，initial，delays，UDP，wait。 </p>
-<p>有些工具支持有些工具不支持的结构：casex，casez，wand，triand，wor，trior，real，disable，forever，arrays，memories，repeat，task，while。</p>
-<h3 id="建立可综合模型的原则"><a href="#建立可综合模型的原则" class="headerlink" title="建立可综合模型的原则"></a>建立可综合模型的原则</h3><p>要保证Verilog HDL赋值语句的可综合性，在建模时应注意以下要点：<br>（1）不使用initial。<br>（2）不使用#10。<br>（3）不使用循环次数不确定的循环语句，如forever、while等。<br>（4）不使用用户自定义原语（UDP元件）。<br>（5）尽量使用同步方式设计电路。<br>（6）除非是关键路径的设计，一般不采用调用门级元件来描述设计的方法，建议采用行为语句来完成设计。<br>（7）用always过程块描述组合逻辑，应在敏感信号列表中列出所有的输入信号。<br>（8）所有的内部寄存器都应该能够被复位，在使用FPGA实现设计时，应尽量使用器件的全局复位端作为系统总的复位。<br>（9）对时序逻辑描述和建模，应尽量使用非阻塞赋值方式。对组合逻辑描述和建模，既可以用阻塞赋值，也可以用非阻塞赋值。但在同一个过程块中，最好不要同时用阻塞赋值和非阻塞赋值。<br>（10）不能在一个以上的always过程块中对同一个变量赋值。而对同一个赋值对象不能既使用阻塞式赋值，又使用非阻塞式赋值。<br>（11）如果不打算把变量推导成锁存器，那么必须在if语句或case语句的所有条件分支中都对变量明确地赋值。<br>（12）避免混合使用上升沿和下降沿触发的触发器。<br>（13）同一个变量的赋值不能受多个时钟控制，也不能受两种不同的时钟条件（或者不同的时钟沿）控制。<br>（14）避免在case语句的分支项中使用x值或z值。</p>
-<h3 id="不能综合的语句"><a href="#不能综合的语句" class="headerlink" title="不能综合的语句"></a>不能综合的语句</h3><p>1、initial<br>只能在test bench中使用，不能综合。 </p>
-<p>2、events<br>event在同步test bench时更有用，不能综合。 </p>
-<p>3、real<br>不支持real数据类型的综合。</p>
-<p>4、time<br>不支持time数据类型的综合。</p>
-<p>5、force 和release<br>不支持force和release的综合。</p>
-<p>6、assign 和deassign<br>不支持对reg 数据类型的assign或deassign进行综合，支持对wire数据类型的assign或deassign进行综合 </p>
-<p>7、fork join<br>不可综合，可以使用非块语句达到同样的效果。</p>
-<p>8、primitives<br>支持门级原语的综合，不支持非门级原语的综合。</p>
-<p>9、table<br>不支持UDP 和table的综合。</p>
-<p>10、敏感列表里同时带有posedge和negedge<br>如：always @(posedge clk or negedge clk) begin…end<br>这个always块不可综合。</p>
-<p>11、同一个reg变量被多个always块驱动</p>
-<p>12、延时<br>以#开头的延时不可综合成硬件电路延时，综合工具会忽略所有延时代码，但不会报错。<br>如：a&#x3D;#10 b;<br>这里的#10是用于仿真时的延时，在综合的时候综合工具会忽略它。也就是说，在综合的时候上式等同于a&#x3D;b; </p>
-<p>13、与X、Z的比较<br>可能会有人喜欢在条件表达式中把数据和X(或Z)进行比较，殊不知这是不可综合的，综合工具同样会忽略。所以要确保信号只有两个状态：0或1。</p>
-<h2 id="异步FIFO为什么使用格雷码（gray-code）"><a href="#异步FIFO为什么使用格雷码（gray-code）" class="headerlink" title="异步FIFO为什么使用格雷码（gray-code）"></a>异步FIFO为什么使用格雷码（gray-code）</h2><p>异步FIFO通过比较读写地址进行满空判断，但是读写地址属于不同的时钟域，所以在比较之前需要先将读写地址进行同步处理，将写地址同步到读时钟域再和读地址比较进行FIFO空状态判断（同步后的写地址一定是小于或者等于当前的写地址，所以此时判断FIFO为空不一定是真空，这样更保守），将读地址同步到写时钟域再和写地址比较进行FIFO满状态判断（同步后的读地址一定是小于或者等于当前的读地址，所以此时判断FIFO为满不一定是真空，这样更保守），这样可以保证FIFO的特性：FIFO空之后不能继续读取，FIFO满之后不能继续写入。</p>
-<p>大多数情形下，异步FIFO两端的时钟不是同频的，或者读快写慢，或者读慢写快，这时候进行地址同步的时候，可能会有地址遗漏，以读慢写快为例，进行满标志判断的时候需要将读地址同步到写时钟域，因为读慢写快，所以不会有读地址遗漏，同步后的读地址滞后当前读地址，所以可能满标志会提前产生。进行空标志判断的时候需要将写地址同步到读地址，因为读慢写快，所以当读时钟同步写地址的时候，必然会漏掉一部分写地址（写时钟快，写地址随写时钟翻转，直到满标志出现为止），那到底读时钟会同步到哪个写地址？不必在意是哪一个，我们关注的是漏掉的地址会不会对FIFO的空标志产生影响。比如写地址从0写到10，期间读时钟域只同步到了2,5,7这三个写地址，漏掉了其他地址。同步到7地址时，真实的写地址可能已经写到10地址，相当于“在读时钟域还没来得及觉察的情况下，写时钟域可能偷偷写了数据到FIFO去”，这样在比较读写地址的时候不会产生FIFO“空”读操作。漏掉的地址也没有对FIFO的逻辑操作产生影响。</p>
-<p>我们可以对异步FIFO的地址采用binary编码，这样并不影响异步FIFO的功能，前提是读写地址同步时能够保持正确。这种情况在功能仿真时完全正确，问题只有到时序仿真时才会遇到。毛刺可以说是异步电路的杀手，一个毛刺被触发器采样后会被放大，然后传播，导致电路功能出错。binary编码的地址总线在跳变时极易产生毛刺，因为binary编码是多位跳变，在实现电路时不可能做到所有的地址总线等长，address bus skew必然存在，而且写地址和读地址分属不同时钟域，读写时钟完全异步，这样地址总线在进行同步过程中出错不可避免，比如写地址在从0111到1000转换时4条地址线同时跳变，这样读时钟在进行写地址同步后得到的写地址可能是0000-1111的某个值，这个完全不能确定，所以用这个同步后的写地址进行FIFO空判断的时候难免出错。 </p>
-<p>这个时候gray码体现了价值，一次只有一位数据发生变化，这样在进行地址同步的时候，只有两种情况：1.地址同步正确；2.地址同步出错，但是只有1位出错；第一种正确的情况不需要分析，我们关注第二种，假设写地址从000-&gt;001，读时钟域同步出错，写地址为000-&gt;000，也就是地址没有跳变，但是用这个错误的写地址去做空判断不会出错，最多是让空标志在FIFO不是真正空的时候产生，而不会出现空读的情形。所以gray码保证的是同步后的读写地址即使在出错的情形下依然能够保证FIFO功能的正确性，当然同步后的读写地址出错总是存在的（因为时钟异步，采样点不确定）。这里需要注意gray码只是在相邻两次跳变之间才会出现只有1位数据不一致的情形，超过两个周期则不一定，所有地址总线bus skew一定不能超过一个周期，否则可能出现gray码多位数据跳变的情况，这个时候gray码就失去了作用，因为这时候同步后的地址已经不能保证只有1位跳变了。 </p>
-<p>另外需要将地址总线打两拍，这是为了避免亚稳态传播，理论上将打两拍不能消除亚稳态现象，因为时钟异步，亚稳态不可避免，但是可以极大降低亚稳态传播的概率，低频情况下甚至STA不需要分析这里的异步时序，因为寄存器都可以在一拍内将亚稳态消除，恢复到正常0&#x2F;1态。而在高频情况下则不一定，尤其在28nm工艺以下，需要检查两级触发器的延迟，保证延迟低，这样可以提高Tr，提高系统MTBF。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" data-id="cmdpck6it0005bqn27mep6ix5" data-title="Verilog基本知识" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Verilog基础语法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-12-22T00:00:00.000Z" itemprop="datePublished">2021-12-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Verilog基础语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-OPERATORS"><a href="#1-OPERATORS" class="headerlink" title="1. OPERATORS"></a>1. OPERATORS</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmnxe02nvj30k60rw77n.jpg"></p>
-<h2 id="2-Code-of-Module"><a href="#2-Code-of-Module" class="headerlink" title="2. Code of Module"></a>2. Code of Module</h2><p><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmo07yqdug306904gq2s.gif"> </p>
-<p>编写如图所示的chip，代码为： </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module arbiter (    </span><br><span class="line">    clock      , // clock  </span><br><span class="line">    reset      , // Active high, syn reset  </span><br><span class="line">    req\_0      , // Request 0  </span><br><span class="line">    req\_1      , // Request 1  </span><br><span class="line">    gnt\_0      , // Grant 0  </span><br><span class="line">    gnt\_1        // Grant 1  </span><br><span class="line">    );  </span><br><span class="line"></span><br><span class="line">//-------------Input Ports-----------------------------  </span><br><span class="line">    input           clock               ;  </span><br><span class="line">    input           reset               ;  </span><br><span class="line">    input           req\_0               ;  </span><br><span class="line">    input           req\_1               ;  </span><br><span class="line">     </span><br><span class="line">//-------------Output Ports----------------------------  </span><br><span class="line">    output        gnt\_0                 ;  </span><br><span class="line">    output        gnt\_1                 ;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-Control-Statements"><a href="#3-Control-Statements" class="headerlink" title="3. Control Statements"></a>3. Control Statements</h2><h3 id="3-1-if-else"><a href="#3-1-if-else" class="headerlink" title="3.1 if-else"></a>3.1 if-else</h3><p>This statement is used to check the chondition to decide whether or not to excute a portion of code.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if (enable == 1&#x27;b1) begin</span><br><span class="line">    data = 10; // Decimal assigned</span><br><span class="line">    address = 16&#x27;hDEAD; // Hexadecimal</span><br><span class="line">    wr\_enable = 1&#x27;b1; // Binary </span><br><span class="line"> </span><br><span class="line">end else begin</span><br><span class="line">    data = 32&#x27;b0; n   </span><br><span class="line">    wr\_enable = 1&#x27;b0;</span><br><span class="line">    address = address + 1;  </span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>The difference of if-else in verilog between others is that we need to use <strong>begin</strong> and <strong>and</strong> instead of brackets. </p>
-<h3 id="3-2-Case"><a href="#3-2-Case" class="headerlink" title="3.2 Case"></a>3.2 Case</h3><p>The case statement is used where we have one variable which needs to be checked for multiple values. The address decoder is an good example. </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">case(address)</span><br><span class="line">    0 : $display (&quot;...&quot;);</span><br><span class="line">    1 : $display (&quot;...&quot;);</span><br><span class="line">    2 : $display  (&quot;...&quot;);</span><br><span class="line">    default : $display  (&quot;...&quot;);</span><br><span class="line">endcase</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-While"><a href="#3-3-While" class="headerlink" title="3.3 While"></a>3.3 While</h3><p>While loop is not used normally in the real life, but it is used in the test bench.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">while (free\_time) begin</span><br><span class="line">    $display (&quot;...&quot;);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-For-Loop"><a href="#3-4-For-Loop" class="headerlink" title="3.4 For Loop"></a>3.4 For Loop</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for (i = 0; i &lt; 16; i = i +1) begin</span><br><span class="line">    $display (&quot;...&quot;, i);</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-Repeat"><a href="#3-5-Repeat" class="headerlink" title="3.5 Repeat"></a>3.5 Repeat</h3><p>Repeat is used to tell us how many times to run throught the code.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">repeat (16) begin</span><br><span class="line">    $display (&quot;Current value of i is %d&quot;, i);</span><br><span class="line">    i = i + 1;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="4-Initial-Block"><a href="#4-Initial-Block" class="headerlink" title="4. Initial Block"></a>4. Initial Block</h2><p>Initial Block is used at the beginning of the simulation. </p>
-<p>The sensitive list is the one which tells the always block when to execute the block of code, as shown in the figure below. The @ symbol indicates the block will be triggered at the condition in parenthesis. </p>
-<p>The always block can not drive wire data but can drive reg and int data.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">initial begin</span><br><span class="line">    clk = 0;</span><br><span class="line">    reset = 0;</span><br><span class="line">    req\_0 = 0;</span><br><span class="line">    req\_1 = 0;</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Always-Block"><a href="#5-Always-Block" class="headerlink" title="5. Always Block"></a>5. Always Block</h2><p>Always block always excutes. additionally, it also can have a sensitive list or a delay associated with it. </p>
-<h2 id="6-Test-and-Function"><a href="#6-Test-and-Function" class="headerlink" title="6. Test and Function"></a>6. Test and Function</h2><p>Wehen we nee to repeat the same old things again and agin, we can use the Task and Funtion. It’s similar with other languages to repeat used codes. </p>
-<p>There is one different between the function and task. Task can have the time delay but function can not. This means that function canbe used ofr modeling combnational logic.</p>
-<p>By the way, function can return a value. whereas task can not.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function parity;</span><br><span class="line">input [31:0] data;</span><br><span class="line">integer i;</span><br><span class="line">begin</span><br><span class="line">    parity = 0;</span><br><span class="line">    for (i= 0; i &lt; 32; i = i + 1) begin</span><br><span class="line">        parity = parity ^ data[i];</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line">endfunction</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" data-id="cmdpck6is0003bqn22kuqfem2" data-title="Verilog基础语法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数字电路基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time class="dt-published" datetime="2021-12-21T00:00:00.000Z" itemprop="datePublished">2021-12-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">数字电路基础</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="一-原码，反码，补码"><a href="#一-原码，反码，补码" class="headerlink" title="一. 原码，反码，补码"></a>一. 原码，反码，补码</h2><h3 id="1-机器数"><a href="#1-机器数" class="headerlink" title="1. 机器数"></a>1. 机器数</h3><p><strong>机器数</strong>是二进制的数字，带有sign bit，例如：</p>
-<blockquote>
-<p>-3的机器数为10000011<br>3的机器数为00000011</p>
-</blockquote>
-<h3 id="2-真值"><a href="#2-真值" class="headerlink" title="2. 真值"></a>2. 真值</h3><p>首先明确的一个点是什么是<strong>形式值</strong>。即正常二进制转换十进制所得到的数值，例如：</p>
-<blockquote>
-<p>10000011转换成二进制即为131，所以131就是10000011的形式值</p>
-</blockquote>
-<p>但是<strong>真值</strong>可以理解为去掉sign bit，将其他位转换为形式值，例如：</p>
-<blockquote>
-<p>10000011，取MSB为sign bit，1为负数，0000011为3，故10000011的真值为-3</p>
-</blockquote>
-<h3 id="3-原码"><a href="#3-原码" class="headerlink" title="3. 原码"></a>3. 原码</h3><p><strong>原码</strong>为sign bit+真值的绝对值，且MSB为Sign Bit。因此正常二进制32-bit int取值范围为[1111 1111， 0111 111],即为[-127， 127]。</p>
-<h3 id="4-反码"><a href="#4-反码" class="headerlink" title="4. 反码"></a>4. 反码</h3><p>正数<strong>反码</strong>为其本身，负数反码为原码sign bit不变，其余位取反。</p>
-<h3 id="5-补码"><a href="#5-补码" class="headerlink" title="5. 补码"></a>5. 补码</h3><p>正数<strong>补码</strong>为其本身，负数补码为原码基础上，sign bit不变，其余位取反+1。(i.e. 反码+1) </p>
-<hr>
-<h2 id="二-竞争冒险"><a href="#二-竞争冒险" class="headerlink" title="二. 竞争冒险"></a>二. 竞争冒险</h2><p>在实际电路中会存在time dalay，当多个信号发生变化的瞬间，组合的逻辑输出产生先后顺序，这个现象叫做<strong>竞争</strong>。<br>同时time delay会导致实际输出会有毛刺现象，这种情况即为冒险。冒险分两种：</p>
-<blockquote>
-<ol>
-<li>静态冒险</li>
-<li>动态冒险</li>
-</ol>
-</blockquote>
-<p>如果存在两个或者两个以上的输入信号同时产生变化时，输出上产生了毛刺现象，此为<strong>功能冒险</strong>。<br>如果只有一个输入产生变化时才出现冒险，此为<strong>逻辑冒险</strong>。</p>
-<h3 id="1-静态冒险"><a href="#1-静态冒险" class="headerlink" title="1. 静态冒险"></a>1. 静态冒险</h3><p>在一个组合电路输入有变化且输出不应该发生变化的情况下，出现了一次瞬间的错误变化叫做<strong>静态冒险</strong>。</p>
-<h4 id="1-1-0型冒险"><a href="#1-1-0型冒险" class="headerlink" title="1.1 0型冒险####"></a>1.1 0型冒险####</h4><p>0型冒险是指输出原本应该一直为0的时候，由于time delay的原因输出产生了短暂的1输出。</p>
-<h4 id="1-2-1型冒险"><a href="#1-2-1型冒险" class="headerlink" title="1.2 1型冒险"></a>1.2 1型冒险</h4><p>1型冒险是指输出原本应该一直为1的时候，由于time delay的原因输出产生了短暂的0输出。</p>
-<h3 id="2-动态冒险"><a href="#2-动态冒险" class="headerlink" title="2. 动态冒险"></a>2. 动态冒险</h3><p>输入变化时，输出也要变化的时候叫做<strong>动态冒险</strong>。<br>（i.e. 也就是一个输入变化一次从而引发输出变化多次的可能性）<br>因为动态冒险是由于静态冒险产生的，所以动态冒险的电路一定存在静态冒险。</p>
-<h3 id="3-如何判断冒险"><a href="#3-如何判断冒险" class="headerlink" title="3. 如何判断冒险"></a>3. 如何判断冒险</h3><p>可以利用K-map进行静态冒险的检查。类似下图：<br><img src="http://tva1.sinaimg.cn/large/008gHpgAgy1gxmmmrfchtj30750453yo.jpg"><br>AC与AB两个圈相切，这种时候可能会产生冒险。B&#x3D;C&#x3D;1，当A从1变成0的时候，会产生逻辑冒险。那么如何消除呢，这时候我们需要对原来的SOP后面加上BC即可消除输出的毛刺现象。</p>
-<h3 id="4-如何消除毛刺"><a href="#4-如何消除毛刺" class="headerlink" title="4. 如何消除毛刺"></a>4. 如何消除毛刺</h3><p>首先需要确认一点，毛刺不是对所有的输入都是有害的，例如DFF的输入端，只要毛刺不在time edge并且满足数据建立和保持时间，则对系统无害，但是我们还是需要尽可能地取减少毛刺现象。可以通过以下方法： </p>
-<blockquote>
-<ol>
-<li>尽量使用synchronous design</li>
-<li>在SOP或者POS中增加K-Map当中相切圆的term</li>
-<li>通过在输出增加并联的电容减少毛刺的影响</li>
-</ol>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" data-id="cmdpck6it0007bqn2h0g65wsr" data-title="数字电路基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-历程之始" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" class="article-date">
-  <time class="dt-published" datetime="2021-12-20T00:00:00.000Z" itemprop="datePublished">2021-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/">历程之始</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>历时一天搭建好了这个blog，希望用这个网站记录我的历程。</p>
-<h2 id="寒假规划（12-20-2021–01-10-2022）"><a href="#寒假规划（12-20-2021–01-10-2022）" class="headerlink" title="寒假规划（12.20.2021–01.10.2022）"></a>寒假规划（12.20.2021–01.10.2022）</h2><hr>
-<h3 id="华为机考准备（01-05-2022）"><a href="#华为机考准备（01-05-2022）" class="headerlink" title="华为机考准备（01.05.2022）"></a>华为机考准备（01.05.2022）</h3><ul>
-<li>数字电路系统</li>
-<li>System Verilog验证</li>
-<li>Verilog学习</li>
-<li>半导体制造技术</li>
-<li>高级ASIC芯片综合</li>
-<li>复杂SOC设计</li>
-</ul>
-<h3 id="课程"><a href="#课程" class="headerlink" title="课程"></a>课程</h3><ul>
-<li>ARTH (12.13-01.07)</li>
-<li>FIN (12.22-1.18)</li>
-<li>NURT (due to 3&#x2F;10 )</li>
-</ul>
-<h3 id="需要再次学习（如有时间）"><a href="#需要再次学习（如有时间）" class="headerlink" title="需要再次学习（如有时间）"></a>需要再次学习（如有时间）</h3><ul>
-<li>半导体物理与器件</li>
-<li>信号与系统</li>
-<li>微电子元器件</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" data-id="cmdpck6ir0001bqn2afpk32c5" data-title="历程之始" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/notes/" style="font-size: 10px;">notes</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/07/25/hello-world/">Hello World</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">STA基本方法</a>
-          </li>
         
-          <li>
-            <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Verilog基本知识</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Verilog基础语法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">数字电路基础</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Top-down planing --&gt; Bit-level Exection"></span>
+          
+        </div>
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+
       
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/07/25/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/07/25/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-07-25 07:01" pubdate>
+              2025-07-25
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" target="_self">
+          STA基本方法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" target="_self">
+        <div>
+          声明：本文仅为个人学习笔记，原文集合如下：https://blog.csdn.net/andy_icer&#x2F;category_9877331.html 时序路径分析方法1. 建立时间分析建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间。这里以最典型的时序路径类型触发器到触发器为例，如图  始出发点触发器FF0称为数据发射触发器（lauch flip-flop）终
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-27 00:00" pubdate>
+              2021-12-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/notes/">#notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" target="_self">
+          Verilog基本知识
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" target="_self">
+        <div>
+          声明：本文仅为个人学习笔记，原文集合如下：https://blog.csdn.net/times\_poem/category\_6245867.html 0. define、parameter、localparam三者的区别1、概述define：   作用 -&gt; 常用于定义常量可以跨模块、跨文件;范围 -&gt; 整个工程;   parameter：   作用 -&gt; 常用于模块间参数
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-27 00:00" pubdate>
+              2021-12-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/notes/">#notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" target="_self">
+          Verilog基础语法
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" target="_self">
+        <div>
+          1. OPERATORS 2. Code of Module  编写如图所示的chip，代码为：  1234567891011121314151617181920module arbiter (        clock      , // clock      reset      , // Active high, syn reset      req\_0      , // Request
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-22 00:00" pubdate>
+              2021-12-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/notes/">#notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" target="_self">
+          数字电路基础
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/" target="_self">
+        <div>
+          一. 原码，反码，补码1. 机器数机器数是二进制的数字，带有sign bit，例如：  -3的机器数为100000113的机器数为00000011  2. 真值首先明确的一个点是什么是形式值。即正常二进制转换十进制所得到的数值，例如：  10000011转换成二进制即为131，所以131就是10000011的形式值  但是真值可以理解为去掉sign bit，将其他位转换为形式值，例如：  1000
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-21 00:00" pubdate>
+              2021-12-21
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/notes/">#notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" target="_self">
+          历程之始
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/12/20/%E5%8E%86%E7%A8%8B%E4%B9%8B%E5%A7%8B/" target="_self">
+        <div>
+          历时一天搭建好了这个blog，希望用这个网站记录我的历程。 寒假规划（12.20.2021–01.10.2022） 华为机考准备（01.05.2022） 数字电路系统 System Verilog验证 Verilog学习 半导体制造技术 高级ASIC芯片综合 复杂SOC设计  课程 ARTH (12.13-01.07) FIN (12.22-1.18) NURT (due to 3&#x2F;10
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-20 00:00" pubdate>
+              2021-12-20
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/notes/">#notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

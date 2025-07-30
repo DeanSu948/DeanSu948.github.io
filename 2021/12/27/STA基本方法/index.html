@@ -1,12 +1,25 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <title>STA基本方法 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="声明：本文仅为个人学习笔记，原文集合如下：https:&#x2F;&#x2F;blog.csdn.net&#x2F;andy_icer&#x2F;category_9877331.html 时序路径分析方法1. 建立时间分析建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间。这里以最典型的时序路径类型触发器到触发器为例，如图  始出发点触发器FF0称为数据发射触发器（lauch flip-flop）终">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="声明：本文仅为个人学习笔记，原文集合如下：https:&#x2F;&#x2F;blog.csdn.net&#x2F;andy_icer&#x2F;category_9877331.html 时序路径分析方法1. 建立时间分析建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间。这里以最典型的时序路径类型触发器到触发器为例，如图  始出发点触发器FF0称为数据发射触发器（lauch flip-flop）终">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STA基本方法">
 <meta property="og:url" content="http://example.com/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/index.html">
@@ -32,103 +45,270 @@
 <meta property="article:modified_time" content="2025-07-30T02:08:20.158Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="notes">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQWVhNYUhhUmtFT3YwMmhad244UHZPQ0xpYXFtNExhTzVZd1pIMXNVTWpRVUJ5dFUyUVk5QW96US82NDA?x-oss-process=image/format,png">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+  <title>STA基本方法 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
-<link rel="stylesheet" href="/css/style.css">
+
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="STA基本方法"></span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-27 00:00" pubdate>
+          December 27, 2021 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          3.3k words
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+          28 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-STA基本方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T00:00:00.000Z" itemprop="datePublished">2021-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      STA基本方法
-    </h1>
-  
+</div>
 
-      </header>
+  </header>
+
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>声明：本文仅为个人学习笔记，原文集合如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/andy_icer/category_9877331.html">https://blog.csdn.net/andy_icer&#x2F;category_9877331.html</a></p>
-<h2 id="时序路径分析方法"><a href="#时序路径分析方法" class="headerlink" title="时序路径分析方法"></a>时序路径分析方法</h2><h3 id="1-建立时间分析"><a href="#1-建立时间分析" class="headerlink" title="1. 建立时间分析"></a>1. 建立时间分析</h3><p><strong>建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间</strong>。这里以最典型的时序路径类型触发器到触发器为例，如图<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQWVhNYUhhUmtFT3YwMmhad244UHZPQ0xpYXFtNExhTzVZd1pIMXNVTWpRVUJ5dFUyUVk5QW96US82NDA?x-oss-process=image/format,png"></p>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">STA基本方法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>声明：本文仅为个人学习笔记，原文集合如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/andy_icer/category_9877331.html">https://blog.csdn.net/andy_icer&#x2F;category_9877331.html</a></p>
+<h2 id="时序路径分析方法"><a href="#时序路径分析方法" class="headerlink" title="时序路径分析方法"></a>时序路径分析方法</h2><h3 id="1-建立时间分析"><a href="#1-建立时间分析" class="headerlink" title="1. 建立时间分析"></a>1. 建立时间分析</h3><p><strong>建立时间是指在时钟捕获信号有效沿到来之前，数据信号必须提前达到稳定状态的时间</strong>。这里以最典型的时序路径类型触发器到触发器为例，如图<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQWVhNYUhhUmtFT3YwMmhad244UHZPQ0xpYXFtNExhTzVZd1pIMXNVTWpRVUJ5dFUyUVk5QW96US82NDA?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
-<p>始出发点触发器FF0称为数据发射触发器（lauch flip-flop）<br>终止点触发器FF1称为数据捕获器（capture flip-flop）<br>为保证建立时间的满足，由始发点触发器输出的数据必须在下一个时钟有效沿到来前就已经达到稳定<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQeFhXR0NwazhnamZ3SUdoMk54ZlVYOXRLNWliclYxOEN2T0dxOXZFa3JtNXE0blU5QXRKQXhFUS82NDA?x-oss-process=image/format,png"><br>该类型时序路径的建立时间必须满足式：<br><strong>Tlauch+Tck2q+Tdp &lt; Tcapture+Tcycle-Tsetup</strong><br>时序路径的建立时间分析是验证时序路径中时钟与数据之间的时序关系是否满足终止点时序单元建立时间的要求</p>
+<p>始出发点触发器FF0称为数据发射触发器（lauch flip-flop）<br>终止点触发器FF1称为数据捕获器（capture flip-flop）<br>为保证建立时间的满足，由始发点触发器输出的数据必须在下一个时钟有效沿到来前就已经达到稳定<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQeFhXR0NwazhnamZ3SUdoMk54ZlVYOXRLNWliclYxOEN2T0dxOXZFa3JtNXE0blU5QXRKQXhFUS82NDA?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload><br>该类型时序路径的建立时间必须满足式：<br><strong>Tlauch+Tck2q+Tdp &lt; Tcapture+Tcycle-Tsetup</strong><br>时序路径的建立时间分析是验证时序路径中时钟与数据之间的时序关系是否满足终止点时序单元建立时间的要求</p>
 </blockquote>
-<h3 id="2-保持时间分析（hold-timing-check）"><a href="#2-保持时间分析（hold-timing-check）" class="headerlink" title="2. 保持时间分析（hold timing check）"></a>2. 保持时间分析（hold timing check）</h3><p><strong>保持时间是指为保证时序单元对数据读取正确，数据在时钟有效沿到来之后仍需要保持稳定的时间</strong>， 依旧以上图为例，为保证保持时间的满足，由终止点触发器接收的数据，必须在捕获时钟有效沿之后继续维持一段稳定的时间，其时序波形图如图所示<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQREFiSmY4UFBrc2xwcU5IMVVJYmliRlc2WmthR2RhSkpvUFpzR1lJTGhNNTlpYktSTDF1cDRRT0EvNjQw?x-oss-process=image/format,png"> </p>
+<h3 id="2-保持时间分析（hold-timing-check）"><a href="#2-保持时间分析（hold-timing-check）" class="headerlink" title="2. 保持时间分析（hold timing check）"></a>2. 保持时间分析（hold timing check）</h3><p><strong>保持时间是指为保证时序单元对数据读取正确，数据在时钟有效沿到来之后仍需要保持稳定的时间</strong>， 依旧以上图为例，为保证保持时间的满足，由终止点触发器接收的数据，必须在捕获时钟有效沿之后继续维持一段稳定的时间，其时序波形图如图所示<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQREFiSmY4UFBrc2xwcU5IMVVJYmliRlc2WmthR2RhSkpvUFpzR1lJTGhNNTlpYktSTDF1cDRRT0EvNjQw?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload> </p>
 <blockquote>
 <p>保持时间必须满足式：<br>**Tlauch+Tck2q+Tdp &gt; Tcapture+Thold **</p>
 </blockquote>
 <h2 id="时序单元的相关约束"><a href="#时序单元的相关约束" class="headerlink" title="时序单元的相关约束"></a>时序单元的相关约束</h2><p>时序单元的<strong>时序约束</strong>是为了保证时序单元能够实现正确的逻辑功能所规定的输入或者输出信号数据需要保持稳定的<strong>最小时间间隔值</strong></p>
 <h3 id="1、建立时间"><a href="#1、建立时间" class="headerlink" title="1、建立时间"></a>1、建立时间</h3><p>对于时序单元，建立时间是指时序单元正常工作时，在功能上为了保证正确性，输入信号数据应该在时钟信号有效期到达并保持的最小时间。（计算参数设置一般为50%） </p>
-<p><strong>建立时间的测量值</strong>定义为：<br>从<strong>数据信号的电压达到标准供电电压50%时间点</strong>到时<strong>钟信号电压达到标准供电电压50%时间点</strong>的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173241329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
+<p><strong>建立时间的测量值</strong>定义为：<br>从<strong>数据信号的电压达到标准供电电压50%时间点</strong>到时<strong>钟信号电压达到标准供电电压50%时间点</strong>的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173241329.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
 <h3 id="2、保持时间"><a href="#2、保持时间" class="headerlink" title="2、保持时间"></a>2、保持时间</h3><p>对于时序单元，保持时间是指时序单元要实现正确的逻辑功能，数据信号在时钟沿有效后必须保持的最小时间长度。（计算参数设置一般为50%）</p>
-<p>保持时间的测量值定义为：<br>从时钟信号的电压达到标准供电电压**50%<strong>时间点到数据信号电压达到标准供电电压</strong>50%**时间点的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173318195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
-<h3 id="3、恢复时间"><a href="#3、恢复时间" class="headerlink" title="3、恢复时间"></a>3、恢复时间</h3><p>恢复时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效之前保持有效的最小时间长度。（计算参数设置一般为50%）<br>换句话说：reset达到50%到clk达到50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173346525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
+<p>保持时间的测量值定义为：<br>从时钟信号的电压达到标准供电电压**50%<strong>时间点到数据信号电压达到标准供电电压</strong>50%**时间点的时间间隔。<br><img src="https://img-blog.csdnimg.cn/20200406173318195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<h3 id="3、恢复时间"><a href="#3、恢复时间" class="headerlink" title="3、恢复时间"></a>3、恢复时间</h3><p>恢复时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效之前保持有效的最小时间长度。（计算参数设置一般为50%）<br>换句话说：reset达到50%到clk达到50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173346525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
 <h3 id="4、移除时间"><a href="#4、移除时间" class="headerlink" title="4、移除时间"></a>4、移除时间</h3><p>移除时间是指单元要实现正确的逻辑功能，要求低电平复位信号或者高电平清零信号在时钟有效沿之后保持有效的最小时间长度。（计算参数设置一般为50%） </p>
-<p>移除时间的测量值定义为：<br>从时钟信号电压达到标准供电电压50%时间点到复位或者清零信号电压达到标准供电电压50%时间点的时间间隔。<br>换句话说：CLK上升至50%到reset上升至50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173408922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
+<p>移除时间的测量值定义为：<br>从时钟信号电压达到标准供电电压50%时间点到复位或者清零信号电压达到标准供电电压50%时间点的时间间隔。<br>换句话说：CLK上升至50%到reset上升至50%的时间间隔<br><img src="https://img-blog.csdnimg.cn/20200406173408922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
 <h2 id="时钟特性"><a href="#时钟特性" class="headerlink" title="时钟特性"></a>时钟特性</h2><p>时钟特性有三： </p>
 <ol>
 <li><strong>时钟延迟（clock latency）</strong></li>
@@ -136,12 +316,12 @@
 <li><strong>时钟抖动（clock jitter）</strong></li>
 </ol>
 <h3 id="1、时钟延迟（clock-latency）"><a href="#1、时钟延迟（clock-latency）" class="headerlink" title="1、时钟延迟（clock latency）"></a>1、时钟延迟（clock latency）</h3><p>def：指时钟信号从时钟源输出端口到达时序单元时钟输入端口所需要的传播时间，如图所示</p>
-<p><img src="https://img-blog.csdnimg.cn/20200406174254984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>由于OCV（片上工艺偏差，On-Chip Variation）和PVT（process工艺、voltage电压、temperature温度）等因素会不同幅度地影响时钟输入的延时不确定性，从而导致整个设计时序的不确定。所以时钟输入延时越短，时钟树性能越好，这样可以减少其他外在因素对时钟树性能的影响。</p>
-<h3 id="2、时钟偏斜（clock-skew）"><a href="#2、时钟偏斜（clock-skew）" class="headerlink" title="2、时钟偏斜（clock skew）"></a>2、时钟偏斜（clock skew）</h3><p>非理想情况下，由于时钟线长度及时钟树叶节点负载不同等因素，导致时钟信号到达同一时序路径下的相邻两个时序单元时钟端口的时间并不相同，这种时钟信号之间的偏移就是相同时钟信号之间的<strong>时钟偏斜</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174359406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"><br>实际设计中，时钟信号到达每一个时序单元时钟端口的延时不可能完全相同，时钟偏斜是肯定存在的，这是时序分析中必须要考虑的因素。 </p>
+<p><img src="https://img-blog.csdnimg.cn/20200406174254984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br>由于OCV（片上工艺偏差，On-Chip Variation）和PVT（process工艺、voltage电压、temperature温度）等因素会不同幅度地影响时钟输入的延时不确定性，从而导致整个设计时序的不确定。所以时钟输入延时越短，时钟树性能越好，这样可以减少其他外在因素对时钟树性能的影响。</p>
+<h3 id="2、时钟偏斜（clock-skew）"><a href="#2、时钟偏斜（clock-skew）" class="headerlink" title="2、时钟偏斜（clock skew）"></a>2、时钟偏斜（clock skew）</h3><p>非理想情况下，由于时钟线长度及时钟树叶节点负载不同等因素，导致时钟信号到达同一时序路径下的相邻两个时序单元时钟端口的时间并不相同，这种时钟信号之间的偏移就是相同时钟信号之间的<strong>时钟偏斜</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174359406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br>实际设计中，时钟信号到达每一个时序单元时钟端口的延时不可能完全相同，时钟偏斜是肯定存在的，这是时序分析中必须要考虑的因素。 </p>
 <p>静态时序分析主要分为<strong>布局布线前</strong>和<strong>布局布线后</strong>两个阶段</p>
 <p>两者的<strong>主要区别</strong>在于：后者有具体的互连线长度、宽度、信号分布情况等信息</p>
 <p>后者可以更加准确地估计互连线延迟，以及时钟树网络的延迟；前者只能根据设计电路和面积的大小等简单信息估计线上延迟和时钟树的延迟。</p>
-<h3 id="3、时钟抖动（clock-jitter）"><a href="#3、时钟抖动（clock-jitter）" class="headerlink" title="3、时钟抖动（clock jitter）"></a>3、时钟抖动（clock jitter）</h3><p>在时钟电路设计实现中，不同实现单元的速度在不同时刻可能有着大小不一的差别，时钟信号可能并不能准确地在理想的信号边缘到来之前的瞬间保持在其正确的信号值上，它保持稳定所需的时间比理想情况有一定的偏移，这种偏移是在同一个时序单元的时钟输入端口上的时钟偏移。该时钟偏移主要表现为<strong>时钟抖动</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174443212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70"></p>
+<h3 id="3、时钟抖动（clock-jitter）"><a href="#3、时钟抖动（clock-jitter）" class="headerlink" title="3、时钟抖动（clock jitter）"></a>3、时钟抖动（clock jitter）</h3><p>在时钟电路设计实现中，不同实现单元的速度在不同时刻可能有着大小不一的差别，时钟信号可能并不能准确地在理想的信号边缘到来之前的瞬间保持在其正确的信号值上，它保持稳定所需的时间比理想情况有一定的偏移，这种偏移是在同一个时序单元的时钟输入端口上的时钟偏移。该时钟偏移主要表现为<strong>时钟抖动</strong>，如图所示。<br><img src="https://img-blog.csdnimg.cn/20200406174443212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FuZHlfSUNlcg==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
 <h2 id="时序路径分析模式"><a href="#时序路径分析模式" class="headerlink" title="时序路径分析模式"></a>时序路径分析模式</h2><p>时序路径分析模式中所涉及的两种计算时序路径类型：<strong>最快路径</strong>和<strong>最慢路径</strong>。时序路径分析模式中需要选择 的最快路径和最慢路径进行时序计算。</p>
 <blockquote>
 <p><strong>最快路径（early path）</strong>：指在信号传播延时计算中调用最快工艺参数的路径，根据信号的分类可以分为最快时钟路径和最快数据路径。 </p>
@@ -150,7 +330,7 @@
 <p>时序路径的分析模式主要分为三种：<strong>单一分析模式（single mode）</strong>、<strong>最好-最坏分析模式（BC-WC mode）</strong>、<strong>芯片变化相关分析模式（OCV mode）</strong>。三种分析模式的分析方法大同小异，可以理解为只是分析时导入的库不一样</p>
 <h3 id="1、单一分析模式（single-mode）"><a href="#1、单一分析模式（single-mode）" class="headerlink" title="1、单一分析模式（single mode）"></a>1、单一分析模式（single mode）</h3><p>PVT环境一般分为3类：<strong>最好的</strong>、<strong>典型的</strong> 和 <strong>最坏的</strong>工作环境。最好对应较小的工艺偏差、较低的工作温度以及较高的工作电压，最坏对应较大的工艺偏差、较高的工作温度和较低的工作电压，典型则是上述两种极端条件的折中。 </p>
 <p>根据前面所介绍的触发器到触发器时序路径建立时间要求，转换成单一分析模式下建立时间的基本计算公式如下：<br><strong>发射时钟最慢路径延时+最慢数据路径延时 ≤ 捕获时钟最快路径延时+时钟周期-终止点时序单元建立时间</strong> </p>
-<p>下面进行单一分析模式下建立时间计算，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQNzRpY2FtVXdBcUJPYzZvRnl4QVRKQ2NJOHpham5uV2JmUXdxTU9rNGwxVHRsaWM5TFVzQW1pY2NBLzY0MA?x-oss-process=image/format,png"> </p>
+<p>下面进行单一分析模式下建立时间计算，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQNzRpY2FtVXdBcUJPYzZvRnl4QVRKQ2NJOHpham5uV2JmUXdxTU9rNGwxVHRsaWM5TFVzQW1pY2NBLzY0MA?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload> </p>
 <blockquote>
 <p> 根据图1的延时参数，单一分析模式下建立时间计算结果如下：<br> 时钟周期&#x3D;4<br> 发射时钟最慢路径延时值&#x3D;U1单元延时+U2单元延时&#x3D;0.8+0.6&#x3D;1.4<br> 最慢数据路径延时值&#x3D;3.6<br> 最快数据路径延时值&#x3D;1.9<br> 捕获时钟最快路径延时值&#x3D; U1单元延时+U3单元延时&#x3D;0.8+0.5&#x3D;1.3<br> 时序单元的建立时间要求值&#x3D;0.2<br> <strong>数据到达延时值</strong>&#x3D;发射时钟最慢路径延时值+最慢数据路径延时值&#x3D;1.4+3.6&#x3D;5<br> <strong>数据要求延时值</strong>&#x3D;时钟周期+捕获时钟最快路径延时值-时序单元的建立时间要求值&#x3D;4+1.3-0.2&#x3D;5.1<br> 延时违反值&#x3D;数据要求延时值-数据到达延时值&#x3D;5.1-5&#x3D;0.1<br> 可以认为延时违反值就是slack，slack&gt;0为满足约束，slack&lt;0为违反约束 </p>
 </blockquote>
@@ -161,163 +341,363 @@
 <blockquote>
 <p>（1）改变单元位置<br>（2）改变单元大小<br>（3）插入缓冲单元<br>（4）删除缓冲单元<br>（5）重分配负载<br>（6）时钟有用偏斜</p>
 </blockquote>
-<h4 id="（1）改变单元位置"><a href="#（1）改变单元位置" class="headerlink" title="（1）改变单元位置"></a>（1）改变单元位置</h4><p>不合理的单元物理位置会使信号线过长而导致线负载和线延时变大，从而影响时序收敛。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQZWNXVXFxQnRUTHM0SDYxQ2htN2ZNdG04eEdRZEVudUxPOTVZd2c4ZGNvNjRZWDZBNFJNZXZ3LzY0MA?x-oss-process=image/format,png"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMzJsaWJPUVlPVEsxM29BU25YdnlmSEVxQWFvZGZmaWI1NUNMb3lHc2hBS0VZem9ET0ZUV295Q3cvNjQw?x-oss-process=image/format,png"></p>
+<h4 id="（1）改变单元位置"><a href="#（1）改变单元位置" class="headerlink" title="（1）改变单元位置"></a>（1）改变单元位置</h4><p>不合理的单元物理位置会使信号线过长而导致线负载和线延时变大，从而影响时序收敛。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQZWNXVXFxQnRUTHM0SDYxQ2htN2ZNdG04eEdRZEVudUxPOTVZd2c4ZGNvNjRZWDZBNFJNZXZ3LzY0MA?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMzJsaWJPUVlPVEsxM29BU25YdnlmSEVxQWFvZGZmaWI1NUNMb3lHc2hBS0VZem9ET0ZUV295Q3cvNjQw?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="（2）改变单元大小"><a href="#（2）改变单元大小" class="headerlink" title="（2）改变单元大小"></a>（2）改变单元大小</h4><p>通常标准单元库提供了多种驱动能力的单元，由于在相同激励和负载情况下，其<strong>延时与驱动能力近似成线性关系，延时随驱动能力的增大而递减</strong>，因此把由于负载过大导致延时恶化的单元调整为驱动能力更大的同类型单元，可以改善时序性能。同样，驱动能力小的同类型单元其对前级驱动单元所体现的负载电容也较小，如果<strong>将驱动力大的负载单元换成驱动力小的负载单元，可以减小前级驱动单元的输出负载</strong>，从而改善前级驱动单元的时序性能。</p>
 <blockquote>
 <p>延时和驱动能力成negative的线性关系<br>把因为load大从而有延时恶化的单元用更大驱动能力的单元可以改善时序性能<br>将驱动动力大的load单元换成驱动能力小的负载单元可以改善前级驱动单元的输出load，从而改善时序</p>
 </blockquote>
-<h4 id="（3）插入缓冲单元"><a href="#（3）插入缓冲单元" class="headerlink" title="（3）插入缓冲单元"></a>（3）插入缓冲单元</h4><p>随着工艺尺寸的不断缩小，其线<strong>延时增加与线长近似成正比指数性关系</strong>，而<strong>增加缓冲单元个数与延时近似成正比线性关系</strong>。那么在单元位置比较合理，同时单元驱动力已经达到最大时的情况下，如果，单元驱动信号线负载仍然过大而导致延时过大的情况，可以通过在长距离信号线中间增加合适的缓冲单元来提高延时性能，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQR2tHQ1NYYk5ZZ1V2d0UwcmhzbTNpYzBnYWxEN0pqbFFVY3FtdFZkSFNtSlljOW1aVTNrNGV6dy82NDA?x-oss-process=image/format,png"></p>
+<h4 id="（3）插入缓冲单元"><a href="#（3）插入缓冲单元" class="headerlink" title="（3）插入缓冲单元"></a>（3）插入缓冲单元</h4><p>随着工艺尺寸的不断缩小，其线<strong>延时增加与线长近似成正比指数性关系</strong>，而<strong>增加缓冲单元个数与延时近似成正比线性关系</strong>。那么在单元位置比较合理，同时单元驱动力已经达到最大时的情况下，如果，单元驱动信号线负载仍然过大而导致延时过大的情况，可以通过在长距离信号线中间增加合适的缓冲单元来提高延时性能，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQR2tHQ1NYYk5ZZ1V2d0UwcmhzbTNpYzBnYWxEN0pqbFFVY3FtdFZkSFNtSlljOW1aVTNrNGV6dy82NDA?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="（4）删除缓冲单元"><a href="#（4）删除缓冲单元" class="headerlink" title="（4）删除缓冲单元"></a>（4）删除缓冲单元</h4><p>如果设计中存在插入缓冲器单元不合理的情况，那么可以通过删除导致降低时序性能的缓冲单元，来达到优化时序性能的目的。</p>
-<h4 id="（5）重分配负载"><a href="#（5）重分配负载" class="headerlink" title="（5）重分配负载"></a>（5）重分配负载</h4><p>在设计中存在扇出负载不合理的情况，可以通过插入缓冲单元重新分配扇出负载来达到优化时序的目的，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMUJ4SlZPNm5US29kck94cnNKM1N5VEVWSFFtV2J1cENhSzNKdWliR04waWJKY3VMdGJlaFNMcUEvNjQw?x-oss-process=image/format,png"> </p>
+<h4 id="（5）重分配负载"><a href="#（5）重分配负载" class="headerlink" title="（5）重分配负载"></a>（5）重分配负载</h4><p>在设计中存在扇出负载不合理的情况，可以通过插入缓冲单元重新分配扇出负载来达到优化时序的目的，如图<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy82S2VyY2NGSWR6UE5GT1NDb2ljYXR5ZGdWb2pieGlhbExQMUJ4SlZPNm5US29kck94cnNKM1N5VEVWSFFtV2J1cENhSzNKdWliR04waWJKY3VMdGJlaFNMcUEvNjQw?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload> </p>
 <ol start="6">
 <li>时钟有用偏斜<br>时钟有用偏斜（useful skew）可以用于优化时序性能，其工作原理就是在两个串行的时序路径中，通过借用其中一条时序路径的延时裕度的方法来修复另一条时序路径上时序违反的问题。</li>
 </ol>
 <h3 id="2、优化保持时间的基本方法"><a href="#2、优化保持时间的基本方法" class="headerlink" title="2、优化保持时间的基本方法"></a>2、优化保持时间的基本方法</h3><p>优化保持时间得到方法相对简单，主要是插入延时单元的方法。</p>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/notes/" class="print-no-link">#notes</a>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/" data-id="cmdpck6ip0000bqn2aavydkfy" data-title="STA基本方法" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
+  
+</div>
 
-    </footer>
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>STA基本方法</div>
+      <div>http://example.com/2021/12/27/STA基本方法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>December 27, 2021</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2025/07/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/25/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" title="Verilog基本知识">
+                        <span class="hidden-mobile">Verilog基本知识</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Verilog基本知识</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
     </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/notes/" style="font-size: 10px;">notes</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/07/25/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/27/STA%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">STA基本方法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/27/Verilog%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Verilog基本知识</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/22/Verilog%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Verilog基础语法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/21/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">数字电路基础</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
